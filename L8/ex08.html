@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Nutricionista</h1>
+
+    <h4>Quantidade por dia</h4>
+    <h5>Pão</h5>
+    <input type="number" id="qnt_pao" autofocus > <br><br>
+    <h5>Bolacha</h5>
+    <input type="number" id="qnt_bolacha"> <br><br>
+    <h5>Achocolatado</h5>
+    <input type="number" id="qnt_chocolate"> <br><br>
+
+    <button onclick="calc()">Verificar Calorias</button>
+
+    <span id="span_caloria"></span> <br> <br>
+
+    <a href="ex02L8.html">EX2</a>
+    <a href="ex08L8.html">EX8</a>
+    <a href="ex10L8.html">EX10</a>
+    <a href="ex13L8.html">EX13</a>
+
+
+</body>
+
+</html>
+
+<script>
+    function calc(){
+
+        var pao = Number(qnt_pao.value) * 50;
+        var bolacha = Number(qnt_bolacha.value) * 80;
+        var achocolatado = Number(qnt_chocolate.value) * 70;
+
+        var caloria = (pao + bolacha + achocolatado);
+
+        if (caloria < 200)
+        {
+            span_caloria.innerHTML = `Parabéns, vai sair em forma da quarentena`;
+        }
+        else if (caloria <= 400)
+        {
+            span_caloria.innerHTML = `Cuidado, vai ficar mais "fofinho(a)" após quarentena!`;
+        }
+        else 
+        {
+            span_caloria.innerHTML = `Bom, acho que muitos não vão te reconhecer após a quarentena`;
+        }
+
+    }
+</script>

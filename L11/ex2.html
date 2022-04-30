@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Analisar esporte</h1>
+
+    <input type="number" id="id_altura" placeholder="Altura do usuário">
+    <br>
+    <button onclick="analisar()">Analisar para esportes</button>
+
+    <span id="mensagem1"></span>
+    <br><br>
+    <span id="mensagem2"></span>
+    <br>
+    
+    <a href="home.html">Home</a>
+
+</body>
+
+</html>
+
+<script>
+
+    function analisar(){
+
+        var menor = id_altura.value <= 1.60;
+        var maior = id_altura.value > 1.60 &&
+        id_altura.value <= 1.85;
+
+        if (menor){
+            
+            mensagem1.innerHTML = `Pode tentar ser piloto de corrida`;
+            mensagem2.innerHTML = `Pode tentar ser velejador`;
+
+        }else if (maior){
+            mensagem1.innerHTML = `Pode tentar ser jogador de futebol ou handbol`;
+        }
+
+    }
+
+</script>

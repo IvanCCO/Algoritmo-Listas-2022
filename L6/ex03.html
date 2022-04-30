@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Norma Ligna</h1>
+    <h2>Calcular média final</h2>
+    <input type="Number" autofocus id="inp_nota1" placeholder="Nota 1">
+    <input type="Number" id="inp_nota2" placeholder="Nota 2">
+    <input type="Number" id="inp_nota3" placeholder="Nota 3">
+    <br>
+    <br>
+    <button onclick="calc()">Analisar Desempenho</button>
+
+    <span id="span_msg"></span>
+    <br>
+    <span style="color: green; font-size: 10px;" id="span_msg_green"></span>
+
+
+</body>
+</html>
+
+<script>
+    function calc(){
+
+        // Coloquei várias variáveis apenas para treinar e digitar no teclado novo
+
+        var nota1Var = Number (inp_nota1.value);
+        var nota2Var = Number (inp_nota2.value);
+        var nota3Var = Number (inp_nota3.value); 
+        var mediaVar = Number (nota1Var + nota2Var + nota3Var) / 3;
+
+        if (mediaVar <= 9.4){
+            span_msg.innerHTML = `Sua média foi de ${mediaVar} infelizmente você não é espetacular`
+
+        }else{
+            span_msg.innerHTML = `Sua média foi de ${mediaVar}`;
+            span_msg_green.innerHTML = `Parabéns você é demais`;
+        }
+
+    }
+</script>

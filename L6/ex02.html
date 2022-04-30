@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Amin Tiroso</h1>
+
+    <h4>Refris por dia</h4>
+    <input type="number" id="inp_quantidade" autofocus placeholder="Quantidade de refri">
+
+    <button onclick="calc()">Quantos refris?</button>
+
+    <span id="span_msg"></span>
+        
+</body>
+</html>
+
+<script>
+    function calc(){
+
+        var refriAnoVar = inp_quantidade.value * 365;
+
+        if(refriAnoVar <= 0){
+            span_msg.innerHTML = `Você viverá muito. Parabéns`
+        }
+        
+        else if (refriAnoVar < 500){
+            span_msg.innerHTML = `Você consome ${refriAnoVar} refrigerantes por ano`
+
+        }else {
+            span_msg.innerHTML = `Você consome ${refriAnoVar}, cuidado com a diabetes. Sério mesmo!`
+        }
+    }
+</script>

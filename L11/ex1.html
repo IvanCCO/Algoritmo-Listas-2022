@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Exercício de Boolean</h1>
+
+    <h3>Login</h3>
+
+    <input type="text" id="username" placeholder="Usuário" autofocus>
+    <input type="password" id="password" placeholder="Senha">
+    <br>
+    <br>
+    <button onclick="entrar()">Entrar</button>
+
+    <span id="span_mensagem"></span>
+    <span id="span_mensagem2"></span>
+    <br>
+    <a href="home.html">Home</a>
+
+
+</body>
+
+</html>
+
+<script>
+
+    function entrar() {
+
+
+        var loginOK = username.value == 'aidimin';
+        var senhaOK = password.value == 'seinha';
+
+        if (loginOK, senhaOK) {
+            span_mensagem.innerHTML = `Usuário autentificado com sucesso!`;
+
+
+        } else if (loginOK == true && senhaOK == false) {
+            alert('Entre em contato com o Vitor');
+
+
+        } else if (loginOK == false || senhaOK == false) {
+            span_mensagem.innerHTML = `Seu login está inválido`;
+            span_mensagem2.innerHTML = `Sua senha está incorreta`;
+        }
+
+    }
+</script>

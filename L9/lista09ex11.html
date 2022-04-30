@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lista09_ex11</title>
+</head>
+<body>
+    <h2>Verificação da Grana do Estágio</h2>
+    <br>
+    Entre com a sua idade: <input id="ipt_idade">
+    <br>
+    Entre com o seu salário: <input id="ipt_salario">
+    <br>
+    <button onclick="analisar()">Analisar Situacão</button>
+    <br><br>
+    <div id="div_msg"></div>
+</body>
+</html>
+<script>
+    function analisar() {
+        var ax_idade = ipt_idade.value;
+        var ax_salario = ipt_salario.value;
+
+        if (ax_idade < 18 && ax_salario < 2500) {
+            div_msg.innerHTML = "Menor de idade e liso";
+        } else if (ax_idade < 18 && ax_salario >= 2500) {
+            div_msg.innerHTML = "Menor de idade e ostentação";
+        } else if (ax_salario < 3500) {
+            div_msg.innerHTML = "Maior de idade e liso"
+        } else if (ax_salario >= 3500 && ax_salario <= 7000) {
+            div_msg.innerHTML = "Maior de idade e ostentação";
+        } else{
+            div_msg.innerHTML = "Maior de idade e MEGA ostentação";
+        }
+        
+    }
+</script>

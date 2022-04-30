@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Texto sem espaço</h1>
+
+    <!--Funçào .trimStart() = faz com que elimine os espaços do começo do value do input -->
+    <!--Funçào .trimEnd() = faz com que elimine os espaços do começo do value do input -->
+
+    <h1>Login</h1>
+
+    <input type="text" id="id_user" autofocus placeholder="Usuário" onkeyup="ver()">
+
+    <span id="live_msg"></span>
+
+</body>
+
+</html>
+
+<script>
+    function ver() {
+
+        var userVar = id_user.value;
+        var espacoVar = userVar.trimStart() && userVar.trimEnd();
+
+        if (espacoVar == '') {
+            live_msg.innerHTML = `Nome Inválido`;
+
+        }else if (espacoVar.indexOf('fogo') != -1){
+            live_msg.innerHTML = `Com fogo não se brinca`
+        }
+         else {
+            live_msg.innerHTML = `Nome Válido`;
+        }
+
+    }
+
+</script>

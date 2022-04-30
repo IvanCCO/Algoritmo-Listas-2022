@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!--Selecionar espécies-->
+    <select onchange='valor()' name="" id="especie">
+        <option value="1">Escolha a especie</option>
+        <option value="2">Mamífero</option>
+        <option value="3">Ovíparo</option>
+    </select>
+
+    <!--Outros selects que aparecerão-->
+
+    <!--Divs e inputs que aparecerão-->
+    <div id="main" style="display: none;">
+    <!-- Div mamiferos-->
+    <div style='display: none;' id="div_animal_mam">
+
+        <select name="" onchange="mamifero()" id="animal_mam">
+            <option value="0">--Escolha um mamífero--</option>
+            <option value="1">Elefante</option>
+            <option value="2"">Porco</option>
+            <option value=" 3">Coelho</option>
+        </select>
+    </div>
+    <!-- Div oviparos-->
+
+    <div style='display: none;' id="div_animal_ovi">
+
+        <select name="" onchange = 'oviparo()'id="animal_ovi">
+            <option value="0">--Escolha um ovíparo--</option>
+            <option value="1">Galinha</option>
+            <option value="2"">Peixe</option>
+            <option value=" 3">Tartaruga</option>
+        </select>
+    </div>
+    <!--Imagem do animal-->
+    <img style='height:150px; width:250px; display: none;' id='imagem_animal' src="" alt="">
+
+    <div id="div_preco" style="display: none;">
+
+        <h3>Valor da Compra</h3>
+
+    <input type="number" id="inp_animal" placeholder="Digite aqui" > <br> <br>
+
+    <button onclick="btn_preco()">Calcular imposto</button> <br> <br>
+
+    <span id="span_totalPagar"></span>
+
+    <button onclick="btn_restart()">Restart</button>
+
+    </div>
+</div>
+
+    <br><br><a href="index.html">Home</a>
+</body>
+
+</html>
+
+<script>
+
+    function valor() {
+        var selectPai = Number(especie.value);
+   
+
+        if (selectPai == 1) {
+            alert('Coloque um valor válido')
+
+            
+        } else if (selectPai == 2) {
+
+            div_animal_mam.style.display = 'block';
+            div_animal_ovi.style.display = 'none';
+            main.style.display = 'block'
+
+        }else {
+            div_animal_mam.style.display = 'none';
+            div_animal_ovi.style.display = 'block';
+            main.style.display = 'block'        }
+        
+    }
+
+    /* Mamifero */
+    function mamifero(){
+        var valorMamifero = Number(animal_mam.value);
+        precoMamifero ='';
+
+        if(valorMamifero == 0){
+            imagem_animal.style.display = 'none';
+            div_preco.style.display = 'none';
+            
+
+
+        }else if(valorMamifero == 1){
+            imagem_animal.style.display = 'block';
+            imagem_animal.src = 'imagens/elefante.jpg';
+            div_preco.style.display = 'block';
+
+        }else if(valorMamifero == 2){
+            imagem_animal.style.display = 'block';
+            imagem_animal.src = 'imagens/porco.jpg';
+            div_preco.style.display = 'block';
+
+        }else{
+            imagem_animal.style.display = 'block';
+            imagem_animal.src = 'imagens/coelho.jpg';
+            div_preco.style.display = 'block';
+        }
+    }
+    /* Oviparo */
+    function oviparo(){
+        var valorOviparo = Number(animal_ovi.value);
+        var precoOviparo ='';
+
+        if(valorOviparo == 0){
+            imagem_animal.style.display = 'none';
+            div_preco.style.display = 'none';
+
+        }else if(valorOviparo == 1){
+            imagem_animal.style.display = 'block';
+            imagem_animal.src = 'imagens/galinha.jpg';
+            div_preco.style.display = 'block';
+
+        }else if(valorOviparo == 2){
+            imagem_animal.style.display = 'block';
+            imagem_animal.src = 'imagens/peixe.png';
+            div_preco.style.display = 'block';
+
+        }else{
+            imagem_animal.style.display = 'block';
+            imagem_animal.src = 'imagens/tartaruga.jpg';
+            div_preco.style.display = 'block';
+        }
+
+        
+
+    }
+
+    function btn_preco() {
+
+            var selectPai = Number(especie.value);
+            
+            var precoOviparo = Number (inp_animal.value);
+            var calcOviparo =  (precoOviparo) + (precoOviparo * 0.05);  
+            var precoMamifero = Number (inp_animal.value);
+            var calcMamifero = (precoMamifero) + (precoMamifero * 0.1);
+
+            if (selectPai == 2) {
+            
+                span_totalPagar.innerHTML = `O valor total a se pagar é de ${calcMamifero} reais`
+
+            }else if (selectPai == 3){
+
+                span_totalPagar.innerHTML = `O valor total a se pagar é de ${calcOviparo} reais`
+            }
+
+
+        }
+
+        function btn_restart(){
+            
+            var selectPai = Number(especie.value);
+            var precoOviparo = Number (inp_animal.value);
+            var calcOviparo =  (precoOviparo) + (precoOviparo * 0.05);  
+            var precoMamifero = Number (inp_animal.value);
+            var calcMamifero = (precoMamifero) + (precoMamifero * 0.1);
+
+            if (selectPai == 2) {
+            
+            alert(`O valor do imposto é de ${precoOviparo * 0.05} reais` );
+        }else if (selectPai == 3){
+
+            alert(`O valor do imposto é de ${precoMamifero * 0.1} reais`)
+        }
+            addEventListener("click", function() {
+    
+    location.reload();
+});
+        }
+
+</script>

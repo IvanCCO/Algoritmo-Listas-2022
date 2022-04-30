@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Como está meu atendimento?</h1>
+
+    <select id="estrelas">
+        <option value="0">--Selecione--</option>
+        <option value="1">1 estrela</option>
+        <option value="2">2 estrelas</option>
+        <option value="3">3 estrelas</option>
+        <option value="4">4 estrelas</option>
+        <option value="5">5 estrelas</option>
+    </select>
+
+    <h3>Média atual:<span id="span_media"></span></h3>
+    <br>
+    <br>
+    <h3>Número de avaliações:<span id="span_avaliacao"></span></h3>
+    <br>
+    <br>
+    <button onclick="confirmar()">Confirmar Avaliação</button>
+
+
+</body>
+
+</html>
+
+<script>
+    
+    var avaliacao = 0;
+    var pontos = 0;
+    
+    function confirmar(){
+        
+        var estrelasVar = Number(estrelas.value)
+        var media = pontos / avaliacao;
+        avaliacao = avaliacao + 1;
+        
+        
+        if (estrelasVar == 0){
+            alert ('Digite um valor válido');
+            avaliacao = '';
+        
+        } if (estrelasVar == 1){
+
+            pontos += 1;
+            
+
+        } if (estrelasVar ==2){
+
+            pontos += 2;
+            
+
+        } if (estrelasVar == 3){
+
+            pontos += 3;
+            
+
+        } if (estrelasVar == 4){
+
+            pontos += 4;
+            
+
+        } if (estrelasVar == 5){
+
+            pontos += 5;
+            
+
+        }
+
+        span_media.innerHTML = `${media.toFixed(2)}`
+        span_avaliacao.innerHTML = `${avaliacao}`
+
+    }
+
+</script>

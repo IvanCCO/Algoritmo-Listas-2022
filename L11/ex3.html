@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <h1>Situaçao aluno</h1>
+
+    <h3>Insira sua média</h3>
+    <input type="number"  id="inp_media" autofocus placeholder="Média">
+    <br>
+    <br>
+    <h3>Insira sua frequência </h3>
+    <input type="number" id="inp_freq" placeholder="Frequência">
+    <br> 
+    <br> 
+    <button onclick="verificar()">Analisar Situação </button>
+    <br>
+    <br>
+    <span id="span_msg"></span>
+
+    <a href="home.html">Home</a>
+
+</body>
+
+</html>
+
+<script>
+
+    function verificar(){
+        var media = inp_media.value >= 6;
+        var frequencia = inp_freq.value >= 75;
+
+        if (media, frequencia){
+            span_msg.innerHTML = `Parabéns você foi aprovado`;
+
+        }if (media == true && frequencia == false){
+            span_msg.innerHTML = `Parabéns você foi reprovado por falta kkkk`;
+
+        }if (media == false && frequencia == true){
+            span_msg.innerHTML = 'Parabéns você foi reprovado por nota insuficiente'; 
+        }
+        if (media == false && frequencia == false){
+            span_msg.innerHTML = `Não precisava se matricular`;
+        }
+    }
+</script>

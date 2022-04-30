@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Mercadinho da vó</h1>
+
+    <select name="" id="select_produto">
+        <option value="0">--Selecione--</option>
+        <option value="1.43">Farinha</option>
+        <option value="3.00">Trigo</option>
+        <option value="40.50">Carne</option>
+        <option value="30.00">Peixe</option>
+    </select>
+    <br><br>
+
+    <button onclick="valor()">Ver preço</button>
+
+    
+</body>
+
+</html>
+
+
+<script>
+
+    function valor(){
+        if (select_produto.value == 0){
+            alert ('Selecione um valor válido');
+            }
+
+        alert (`Isso custa  R$${select_produto.value}, um roubo`);
+    }
+</script>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula-31-03</title>
+
+</head>
+
+<body>
+
+
+
+    <h1>Classe social de Tuvalu</h1>
+    
+    <h4>Informe sua renda mensal</h4>
+
+    <input type="number" id="inp_renda" autofocus placeholder="Digite a renda">
+
+    <h4>Analisar Renda</h4>
+
+    <button onclick="renda()">$$$$</button> <br><br>
+
+    <span id="span_renda"></span> <br> <br>
+
+    <a href="ex02L8.html">EX2</a>
+    <a href="ex08L8.html">EX8</a>
+    <a href="ex10L8.html">EX10</a>
+    <a href="ex13L8.html">EX13</a>
+
+
+</body>
+
+</html>
+
+    <script>
+/*250,900,2500,9500*/
+
+            
+        function renda()
+        {
+        var x = (inp_renda.value)
+        
+        
+            if(x <= 250){
+                span_renda.innerHTML = `Sua renda é de uma pessoa Classe E`;
+            }   
+            else if (x <= 900){
+                span_renda.innerHTML = `Sua renda é de uma pessoa Classe D`;}
+           
+            else if (x <= 2500){
+                span_renda.innerHTML = `Sua renda é de uma pessoa Classe C`;
+            }
+        
+            else if (x <= 9500){
+                span_renda.innerHTML = `Sua renda é de uma pessoa Classe B`;
+            }
+                     
+            else{
+                span_renda.innerHTML = `Sua renda é de uma pessoa Classe A`
+            }
+
+        }
+    
+        </script>

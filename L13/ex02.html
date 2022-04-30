@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Banco 24 horas</h1>
+    <h2>Temos notas de :</h2>
+    <h3> 10 ;50; 100</h3>
+
+    <input type="number" id="inp_valor" autofocus placeholder="Quanto deseja sacar?">
+    <br>
+    <button onclick="calc()">Solicitar Saque</button>
+    <br>
+
+</body>
+</html>
+
+
+<script>
+
+    var saldoVar = 1000;
+
+    function calc(){
+
+        var valorVar = inp_valor.value;
+        var valorConta = valorVar % 10;
+
+        saldoVar = saldoVar - valorVar;
+
+        // ERROS
+
+        if(valorVar < 0){
+            alert('Não é possível sacar um saldo negativo');
+            
+        }else if (valorVar > saldoVar){
+            alert('Não é possível fazer esse saque');
+
+        }else if (valorConta != 0){
+            alert('Não existem cédulas disponíveis para esse saque');
+
+            // Acerto
+            
+        }else {
+            alert('Retire o dinheiro no local indicado');
+
+        }
+
+        
+  
+    }
+
+</script>

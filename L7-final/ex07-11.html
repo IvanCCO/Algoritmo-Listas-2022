@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex11L5</title>
+</head>
+<body>
+    <h1>Conta bancária</h1>
+
+    <input type="text" id="valor_saldo" placeholder="Valor do Saldo">
+    
+    <button onclick="calc_fin()">Verificar Finanças</button> <br> <br>
+
+    <div id="div_saldo"></div>
+
+    <br><br><a href="index.html">Home</a>
+
+</body>
+
+</html>
+
+<script>
+
+    function calc_fin()
+    {
+        var saldo = Number(valor_saldo.value);
+
+        if (saldo == 0) {
+
+            div_saldo.innerHTML = (`Conta zerada`)
+        
+        
+        }else if (saldo < 0){
+            div_saldo.innerHTML = (`Está devendo!`)
+
+        }
+        else {
+
+            div_saldo.innerHTML = (`Saldo positivo! :)`)
+        }
+
+         
+    }
+
+</script>

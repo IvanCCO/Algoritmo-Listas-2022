@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Perfomance de filhos</h1>
+
+    <h4>Quantos filhos possui</h4>
+    <input type="number" id="inp_filhos" placeholder="Numero de filhos" autofocus>
+
+    <br><br>
+
+    <button onclick="calc()">Analisar familia</button>
+
+
+    <div id="filho0"></div>
+    <div id="filho1"></div>
+    <div id="filho2"></div>
+    <div id="filho3"></div>
+    <div id="filho4"></div>
+    
+
+    <br><br><a href="index.html">Home</a>
+
+</body>
+
+</html>
+
+<script>
+    function calc(){
+
+        var filhos = Number(inp_filhos.value);
+
+        if (filhos == 0){
+            
+            filho0.innerHTML = `Isso mesmo, aproveite sua vida`;
+            filho1.innerHTML = '';
+            filho2.innerHTML = '';
+            filho3.innerHTML = '';
+            filho4.innerHTML = '';
+    
+
+        }else if (filhos >= 4){
+            filho0.innerHTML = '';
+            filho1.innerHTML = `Não tem TV`;
+            filho2.innerHTML = `Não tem internet`;
+            filho3.innerHTML = `Não tem video-game`;
+            filho4.innerHTML = `Não tem netflix`;
+           
+            
+        }else if (filhos == 3){
+            filho0.innerHTML = '';
+            filho1.innerHTML = `Não tem TV`;
+            filho2.innerHTML = `Não tem internet`;
+            filho3.innerHTML = `Não tem video-game`;
+            filho4.innerHTML = '';
+           
+        
+        }else if (filhos == 2){
+            filho0.innerHTML = '';
+            filho1.innerHTML = `Não tem TV`;
+            filho2.innerHTML = `Não tem internet`;
+            filho3.innerHTML = '';
+            filho4.innerHTML = '';
+           
+        
+        }else if (filhos == 1){
+            filho0.innerHTML = '';
+            filho1.innerHTML = `Não tem TV`;
+            filho2.innerHTML = '';
+            filho3.innerHTML = '';
+            filho4.innerHTML = '';
+           
+         
+        }else{
+            alert('Digite um numero válido')
+        }
+        
+    }
+</script>

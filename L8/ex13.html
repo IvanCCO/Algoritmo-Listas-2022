@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula-31-03</title>
+</head>
+<body>
+
+    <h1>Cofre da Familia</h1>
+
+    <h3>O valor guardado é de R$<span id="span_din">0.00</span></h3>
+
+    <button onclick="ganha()">Ganhar 5 reais</button>
+    <button onclick="perde()">Perder 10 reais</button> <br><br>
+    
+
+    <div id="div_msg"></div>
+
+    
+    <br><br>
+    <a href="ex02L8.html">EX2</a>
+    <a href="ex08L8.html">EX8</a>
+    <a href="ex10L8.html">EX10</a>
+    <a href="ex13L8.html">EX13</a>
+
+
+</body>
+
+</html>
+
+<script>
+    
+        function ganha()
+        {
+            var somar = Number(span_div.value) + 5;
+
+            var valor = span_div.innerHTML = `${somar}`;
+            
+                if (span_div.value < -20)
+                {
+                    div_msg.innerHTML = `Quase um Corinthians`
+                }
+                else if (span_div.value < 0)
+                {
+                    div_msg.innerHTML = `Finanças em perigo`
+                }
+                else if (span_div.value > 100)
+                {
+                    div_msg.innerHTML = `#ostentação`
+                }
+                else 
+                {
+                    div_msg.innerHTML = `Finanças ok!`
+                }
+        }
+</script>

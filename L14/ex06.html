@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Nome da pessoa que você mais ama na vida</h1>
+    <input type="text"  id="inp_nome" autofocus placeholder="Nome da pessoa">
+    <br><br>
+    <input type="range" min="0" max="10" id="inp_valor" placeholder="quanto ama de 0 a 10">
+    <br>
+    <button onclick="loop()">Expressar amor</button>
+    <br>
+    <br>
+    <span id="span_msg"></span>
+
+</body>
+</html>
+
+<script>
+
+    
+    function loop(){
+        
+        var numeroVar = 0;
+        span_msg.innerHTML = '';
+        var nomeVar = inp_nome.value;
+        var valorVar = Number(inp_valor.value);
+
+        if(nomeVar != '' && valorVar != ''){
+    while(numeroVar < valorVar){
+
+        numeroVar ++;
+        span_msg.innerHTML += `${nomeVar}, eu te amo! Sempre lembre disso! <br>`;
+
+    }
+    }
+
+}
+</script>

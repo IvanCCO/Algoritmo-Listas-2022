@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Contando a partir de 5</h1>
+        Entre com o limite superior: <input id="inp_valor" onchange="mostrar()">
+
+        <span id="span_msg"></span>
+
+</body>
+</html>
+
+<script>
+
+    var inicioVar = 5;
+
+    function mostrar(){
+
+        var numero = Number (inp_valor.value);
+    
+        while(inicioVar <= numero){
+
+            span_msg.innerHTML += (inicioVar);
+            inicioVar = inicioVar + 1;
+        }
+    }
+</script>

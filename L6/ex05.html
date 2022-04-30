@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Paulopolis</h1>
+
+    <!--
+        A luz custa 0,85kwh 
+        
+        if kwh/mes < 100 ganha um desconto de 10% no valor final.
+    -->
+    <input type="text" id="inp_kwh" placeholder="kWh diário" autofocus>
+    <br>
+    <button onclick="calc()">Calcular conta</button>
+
+</body>
+</html>
+
+<script>
+    function calc(){
+
+        var kwhVar = Number (inp_kwh.value * 0.85);
+        var kwhMensalVar = kwhVar * 30;
+        var desconto = kwhMensalVar * 0.9;
+        
+        if (kwhMensalVar < 100){
+            alert(`Você pagará o total de ${desconto} reais, parabéns você ganhou um desconto`);
+
+        }else{
+            alert(`Você pagará o total de ${kwhMensalVar} reais, você não ganhou o desconto`);
+        }
+    }
+</script>

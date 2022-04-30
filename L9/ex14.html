@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+ <!-- Valores que estão com 1 fazem referência a parte de Pilotos 
+
+      Valores que estão com 2 fazem referência a parte de Jogadores
+
+      Valores que estão com 3 fazem referência a parte de Candidatos -->
+
+
+    <h1>Processo de seleção</h1>
+
+    <!-- Primeira parte dos inputs -->
+    <div id="intervaloAltura" style="display: block;">
+        <h5>Intervalo de altura Pilotos</h5>
+        <input type="number" id="altura1_inicial" placeholder="Altura inicial Piloto">
+        <br><br>
+        <input type="number" id="altura1_final" placeholder="Altura inicial Piloto">
+        <br><br>
+        <button onclick="verificar1()">Verificar</button><br>
+        <br><br>
+        <h5>Intervalo de altura Jogadores</h5>
+        <input type="number" id="altura2_inicial" placeholder="Altura inicial Jogador">
+        <br><br>
+        <input type="number" id="altura2_final" placeholder="Altura inicial Jogador">
+        <br><br>
+        <button onclick="verificar2()">Verificar</button><br>
+        <br>
+        <br>
+        <button onclick="selecionar()">Selecionar</button>
+    </div>
+    <!-- Fim da primeira parte -->
+
+    <!-- Começo da segunda parte -->
+    <div id="mensagens" style="display: none;">
+
+        <h1>Processo de Seleção de novos atletas</h1>
+
+        <h2>Critério de Seleção de Piloto - altura entre <span id="span_mensagem1_inicial"></span> até 
+        <span id="span_mensagem1_final"></span></h2>
+
+        <h2>Critério de Seleção de Jogador - altura entre <span id='span_mensagem2_inical'></span> até
+        <span id="span_mensagem2_final"></span></h2>
+
+        <!-- Inputs do Canditato -->
+
+        <h5>Nome do candidato</h5>
+        <input type="text"  id="nome3" placeholder="Nome">
+        <h5>Altura do candidato</h5>
+        <input type="number" id="altura3" placeholder="Altura">
+
+       <select  id="selectModalidade">
+            <option value="1">Piloto</option>
+            <option value="2">Jogador</option>
+        </select>
+
+        <!-- Mensagens Parte II -->
+
+            <span id="span_UltimaMSG"></span>
+
+    </div>
+    
+</body>
+
+</html>
+
+<script>
+
+    function verificar1(){
+	if (altura1_inicial.value <= 1){
+	alert('O valor inicial tem que ser maior que 1');
+	
+	}else if (altura1_final.value <= altura1_inicial.value){
+	alert('A altura final tem que ser maior que a inicial');
+	}
+}
+
+    function verificar2(){
+	if (altura2_inicial.value <= 1.5){
+	alert('O valor inicial tem que ser maior que 1,5');
+	
+	}else if (altura2_final.value <= altura2_inicial.value){
+	alert('A altura final tem que ser maior que a inicial');
+	}
+}
+
+    function selecionar(){
+        intervaloAltura.style.display = 'none';
+	    mensagens.style.display = 'block';
+        // Mensagem Piloto
+        span_mensagem1_inicial.innerHTML = `${altura1_inicial.value}`;
+        span_mensagem1_final.innerHTML = `${altura1_final.value}`;
+        // Mensagem Jogadores
+        span_mensagem2_inicial.innerHTML = `${altura2_inicial.value}`;
+        span_mensagem2_final.innerHTML = `${altura2_final.value}`;
+        
+}
+    
+
+
+      
+</script>

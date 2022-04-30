@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu nhenhe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="nhenhe">
+        <img src="IMG-20220413-WA0004.jpg" alt="">
+        <img src="IMG-20220411-WA0016.jpg" alt="">
+        <img src="IMG-20220412-WA0018.jpg" alt="">
+    </div>
+    <h1>Regra de três do Nhenhezinho</h1>
+    <input type="Number" id="inp_1" placeholder="Valor 1 ">
+    <p>Está para</p>
+    <input type="Number" id="inp_2" placeholder="Valor 2 ">
+    <p>Assim como </p>
+    <input type="Number" id="inp_3" placeholder="Valor 3 " onkeypress="key()">
+    <p>Está para</p>
+    <h2>X</h2>
+
+    <button onclick="calc()">Calcular</button>
+
+    <span id="mensagem"></span>
+
+</body>
+</html>
+
+<script>
+
+    function calc(){
+
+        var numero1 = Number (inp_1.value)
+        var numero2 = Number (inp_2.value); 
+        var numero3 = Number (inp_3.value); 
+        
+
+        var conta = Number (numero2 * numero3) / numero1;
+
+        mensagem.innerHTML = `O valor do seu X é de ${conta.toFixed(3)}`
+}
+</script>

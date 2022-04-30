@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Movimento elevador</h1>
+
+    <h3>Quantidade de mulheres</h3>
+    <input id="qntd_m" placeholder="Quantidade de mulher">
+    <br>
+    <br>
+    <h3>Quantidade de homens</h3>
+    <input id="qntd_h" placeholder="Quantidade de homens">
+    <br>
+    <br>
+    <button onclick = calc_peso()>Ligar elevador</button>
+
+    <br><br>
+    <div id="div_msg"></div>
+
+    <br><br><a href="index.html">Home</a>
+</body>
+
+</html>
+
+<script>
+
+    function calc_peso() {
+
+        var mulher = Number(qntd_m.value) * 70;
+        var homem = Number(qntd_h.value) * 90;
+        var soma = mulher + homem;
+        var dif = soma - 499;
+
+        if (soma <= 499) {
+            div_msg.innerHTML = (`Elevador vai se mover, pois esta com ${soma} kg`)
+
+        }
+        else{
+            div_msg.innerHTML = (`Alguém precisa descer. Precisa perder ${dif} kg para mover o elevador`)
+        }
+
+    }
+</script>

@@ -1,0 +1,14 @@
+button{
+    padding: 10px;
+    margin: 10px;
+    border: 0;
+    color: rgb(156, 77, 156);
+    border-radius: 4%;
+}
+
+a {
+    color: red;
+    font-weight: 600;
+    font-size: 10px;
+    
+}

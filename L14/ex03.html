@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+     <h1>Caixinha de mensagens</h1>
+     <p>Potinho de mensagens para quarentena</p> <br>
+
+     <p>Clique no botão para mostrar suas mensagens da semana</p>
+
+     <button onclick="loop()">Mensagens</button>
+
+     <br><br>
+
+     <span id="id_msg"></span>
+
+</body>
+</html>
+
+<script>
+
+    var numeroVar = 0;
+
+    function loop(){
+
+        while(numeroVar < 7){
+
+            numeroVar ++;
+            id_msg.innerHTML += `${numeroVar}.Sou nene <br>`;
+
+        }
+    }
+</script>

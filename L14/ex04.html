@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Pares de 0 a 100</h1>
+
+    <p>Fazendo uso do While</p>
+
+    <button onclick="loop()">S2 pares</button> <br> <br>
+
+    <span id="inp_msg"></span> 
+
+</body>
+</html>
+
+<script>
+
+    var numeroVar = -1;
+
+    function loop(){
+
+        while(numeroVar < 100){
+
+            numeroVar ++;
+
+        if (numeroVar % 2 == 0){
+            inp_msg.innerHTML += `${numeroVar} <br>`;
+        }
+    }
+    }
+</script>

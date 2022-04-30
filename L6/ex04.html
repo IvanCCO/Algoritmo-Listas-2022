@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>LariCalculator</h1>
+
+    <input type="Number" id="inp_valor" autofocus placeholder="Valor da pizza">
+    <br>
+    <input type="Number" id="inp_amigos" placeholder="Quantidade de amigos">
+    <br>
+    <button onclick="calc()">Rola pizza?</button>
+    <br>
+    <span id="span_valor"></span>
+
+    <span id="span_erro"></span>
+
+</body>
+</html>
+
+<script>
+    function calc(){
+
+        var valorVar = Number(inp_valor.value);
+        var amigosVar = Number(inp_amigos.value);
+        var media = valorVar / amigosVar;
+
+        if (media <= 20){
+            span_valor.innerHTML = `Cada amigo vai pagar ${media} reais.`;
+            span_erro.innerHTML = `Laricou familia!!!!`;
+
+        }else{
+            span_valor.innerHTML = `Cada amigo vai pagar ${media} reais`;
+            span_erro.innerHTML = `Vão ter que comer ovo`;
+        }
+    }
+</script>

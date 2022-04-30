@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Frequencia SPTECH</h1>
+
+    <h4>Aulas totais</h4>
+    <input id="id_total" placeholder="Quantidade de aulas" autofocus>
+
+    <h4>Aulas ausentes</h4>
+    <input id="id_faltas" placeholder="Quantidade de faltas">
+
+    <br><br>
+
+    <button onclick="calc()">Analisar frequencia</button> <br><br>
+
+    <img id="id_imagem" style="height: 400px; width: 600px;" src="" alt="">
+
+    <br><br><a href="index.html">Home</a>
+ 
+    
+</body>
+
+
+</html>
+
+<script>
+    function calc(){
+        
+        var total = Number(id_total.value);
+        var faltas = Number(id_faltas.value);
+        var presente = total - faltas;
+        var frequencia = (presente / total) * 100; 
+
+        if (frequencia >= 50){
+        id_imagem.src = "imagens/study-girl-2.jpg";
+        
+    }else{
+        id_imagem.src = 'imagens/dia.turista.jpg'
+    }
+}
+
+</script>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Nome</h1>
+
+    <input type="text" id="id_nome" placeholder="Seu nome" autofocus onkeyup="up()">
+    <br>
+    <span style="color: '';" " id="inp_nome"></span>
+
+
+</body>
+</html>
+
+<script>
+
+    function up(){
+
+        var nomeVar = id_nome.value.length;
+
+        if (nomeVar < 10){
+
+            inp_nome.innerHTML = `Nome deve ter pelo menos 10 letras`;
+            inp_nome.style.color = 'Red';
+        }else{
+
+            inp_nome.innerHTML = `Nome OK`;
+            inp_nome.style.color = 'Green';
+        }
+        
+    }
+</script>

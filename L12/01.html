@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>E-mail</h1>
+
+   <input type="text" id="id_email" placeholder="E-mail" autofocus onkeyup="ver()">
+   <br>
+   <span style="color: '';" id="span_aviso"></span>
+
+</body>
+</html>
+
+<script>
+
+    function ver(){
+        var emailVar = id_email.value;
+
+        if (emailVar.indexOf('@') != -1 && emailVar.indexOf('.com') != -1){
+            span_aviso.style.color = 'Green';
+            span_aviso.innerHTML = `Seu e-mail está válido`;
+
+        }else{
+            span_aviso.style.color = 'Red';
+            span_aviso.innerHTML = 'Seu e-mail está inválido';
+        }
+    }
+</script>

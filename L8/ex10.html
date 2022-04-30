@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Banco SPTO</h1>
+
+    <H3>Nome</H3>
+    <input type="text" id="inp_nome" placeholder="Digite seu nome" autofocus> <br> <br>
+
+    <h3>Saldo do cliente</h3>
+    <input type="number" id="inp_saldo" placeholder="Saldo Bancário"> <br><br>
+    
+    <button onclick="verificar()">Verificar perfil</button> <br><br>
+
+    <span id="span_msg"></span> <br><br>
+
+    <a href="ex02L8.html">EX2</a>
+    <a href="ex08L8.html">EX8</a>
+    <a href="ex10L8.html">EX10</a>
+    <a href="ex13L8.html">EX13</a>
+
+
+</body>
+
+</html>
+
+<script>
+
+    function verificar() 
+    {
+        var saldo = Number(inp_saldo.value);
+        var nome = (inp_nome.value);
+
+        if (saldo < 0)
+        {
+            span_msg.innerHTML = `Com o saldo de ${saldo} R$, o cliente ${nome} está com saldo devedor`;
+        }
+        else if (saldo <= 2000)
+        {
+            span_msg.innerHTML = `Com o saldo de ${saldo} R$, o cliente ${nome} está com saldo NORMAL`;
+        }
+
+        else if (saldo <= 5000) 
+        {
+            span_msg.innerHTML = `Com o saldo de ${saldo} R$, o cliente ${nome} está com saldo ACIMA DA MÉDIA`;
+        }
+        
+        else {
+            span_msg.innerHTML = `Com o saldo de ${saldo} R$, o cliente ${nome} tem perfil de INVESTIDOR!`;
+        }
+    }
+</script>

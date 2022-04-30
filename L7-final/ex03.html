@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Mercadinho Bom doce</h1>
+
+    <p style="font-size: 70px;">O Mercado <b style="color: green;">BOM DOCE</b> está em promoção, qualquer chocolate custa R$ 3,00 cada
+         e se a compra for acima de uma dúzia de chocolates o preço cai para R$ 2,50 cada um</p>
+        <br><br>
+    
+        <h3>Chocolates comprados</h3>
+        <input type="text" id="qntd_chocolates" autofocus placeholder="Chocolates">
+
+        <br><br>
+
+        <button style="height: 50px; width: 200px; border-radius: 40px; color: rgb(46, 75, 2); border: 0; background-color: silver; font-weight: 1000; cursor: pointer;" onclick="comprar()">Compra</button> <br><br>
+
+        <span id="span_msg"></span>
+
+        <br><br><a href="index.html">Home</a>
+
+
+</body>
+
+</html>
+
+<script>
+    function comprar(){
+
+        var chocolate = Number(qntd_chocolates.value);
+        var menos = chocolate * 3.00;
+        var mais = chocolate * 2.50;
+
+        if (chocolate <= 0){
+            alert ('Você precisa comprar algum chocolate');
+        }
+        else if (chocolate < 12){
+            span_msg.innerHTML = `O valor de sua compra foi de ${menos} reais`
+        }
+        else {
+            span_msg.innerHTML = `O valor de sua compra foi de ${mais} reias`
+        }
+    }
+</script>

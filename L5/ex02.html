@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Qual deseja ir</h1>
+
+    <select name="" id="select_place">
+        <option value="0">--Selecione--</option>
+        <option value="1">Cinema</option>
+        <option value="2">Teatro</option>
+        <option value="3">Parque</option>
+        <option value="4">Show</option>
+    </select>
+
+    <button onclick="ver()">Ver atração</button>
+
+    <h3><span id="span_msg"></span></h3>
+
+</body>
+
+</html>
+
+<script>
+
+    function ver() {
+        var valor = select_place.value;
+
+        if (valor == 0){
+            alert('Mano Seleciona na moral pf');
+
+        }else if (valor == 1) {
+            span_msg.innerHTML = 'Assistir ao filme "Marley & Eu"';
+
+        }else if (valor == 2){
+            span_msg.innerHTML = 'Assistir a peça "O Fantasma da Ópera"';
+
+        }else if (valor == 3){
+            span_msg.innerHTML = 'Ir ao parque Hopi Hari';
+
+        }else if (valor == 4){
+            span_msg.innerHTML = 'Ouvir o show da Lady GaGa';
+        }
+    }
+</script>

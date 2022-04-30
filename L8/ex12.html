@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Rei dos Cliques</h1>
+    
+    
+    Você já clicou <b id="b_vezes">0</b> vezes <br><br>
+
+    <button onclick="contar()">Clique Aqui</button> <br> <br>
+
+    <span id="msg"></span>
+
+</body>
+
+</html>
+
+<script>
+
+    var cliques = 1;
+
+    function contar(){
+
+        var x = Number(cliques ++);
+
+        b_vezes.innerHTML = (x);
+
+        if (x < 5){
+
+            msg.innerHTML = `Dedo Fraquinho`
+
+        }else if (b_vezes.innerHTML >= 5 && cliques <= 10){
+
+            msg.innerHTML = `Dedo bom`
+
+        }else if (b_vezes.innerHTML >= 11 && cliques <= 15){
+
+            msg.innerHTML = `Gosta de clicar, hein`
+
+        }else{
+
+            msg.innerHTML = `Eita dedo nervoso!`
+        }
+
+    }
+</script>
