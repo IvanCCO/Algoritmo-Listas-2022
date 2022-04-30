@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Altura para o esporte</h1>
+
+    <h3>Qual esporte deve participar?</h3>
+    <input type="number" id="inp_altura" autofocus placeholder="Altura do Aluno" onkeyup="analisar()">
+
+    <span id="span_msg"></span>
+
+</body>
+</html>
+
+<script>
+
+    function analisar(){
+
+        var alturaVar = Number (inp_altura.value);
+
+        if(alturaVar < 0){
+            alert('Erro, altura não pode ser menor que 0');
+        
+        }else if(alturaVar <= 1.65){
+            span_msg.innerHTML = `Você pode ser piloto de corrida`;
+
+        }else if(alturaVar <= 1.80){
+            span_msg.innerHTML = `Você pode ser jogador de Futebol S2`;
+
+        }else {
+            span_msg.innerHTML = `Você pode ser jogador de vôlei ou de basquete`;
+        }
+    }
+</script>
