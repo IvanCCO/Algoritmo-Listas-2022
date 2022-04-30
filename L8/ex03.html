@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Para um ser humano a temperatura é</h1>
+    <input type="number" id="inp_temp" autofocus placeholder="Digite a temperatura" onkeyup="analisar()">
+    <span style="color: rgb(206, 124, 124);" id="span_msg"></span>
+
+</body>
+
+</html>
+
+<script>
+
+    function analisar(){
+        
+        var temperaturaVar = Number(inp_temp.value);
+        
+        if(temperaturaVar < 14){
+            span_msg.style.color = 'blue';
+            span_msg.innerHTML = 'Congelante';
+
+        }else if (temperaturaVar <= 21){
+            span_msg.style.color = 'rgb(11, 221, 236)';
+            span_msg.innerHTML = 'Com frio';
+
+        }else if (temperaturaVar < 24){
+            span_msg.style.color = 'rgb(206, 124, 124)';
+            span_msg.innerHTML = 'Confortável';
+
+        }else if (temperaturaVar <= 31){
+            span_msg.style.color = "red";
+            span_msg.innerHTML = 'Com calor';
+
+        }else {
+            span_msg.style.color = 'purple';
+            span_msg.innerHTML = 'Calor escaldante';
+        }
+    }
+</script>

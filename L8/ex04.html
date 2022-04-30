@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Nutróloga</h1>
+    <h2>Avalie o peso da criança</h2>
+
+    <input id="inp_peso" type="number" placeholder="Peso da criança" autofocus onkeyup="calc()">
+
+    <span id="span_msg"></span>
+
+</body>
+
+</html>
+
+<script>
+
+    function calc(){
+
+        var pesoVar = Number (inp_peso.value);
+        
+        if(pesoVar <= 13.5){
+            span_msg.innerHTML = `Abaixo do peso`;
+
+        }else if (pesoVar == 18.3){
+            span_msg.innerHTML = `Peso perfeito`;
+        
+        }else if (pesoVar < 21.2){
+            span_msg.innerHTML = `Peso na média`;
+
+        }else {
+            span_msg.innerHTML = `Acima do peso`;
+        }
+    }
+</script>
