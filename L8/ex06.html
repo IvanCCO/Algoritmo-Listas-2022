@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Qual time você torce?</h1>
+    
+    <select id="sel_nome" onchange="analisar()">
+        <option value="2">Corinthans</option>
+        <option value="1">São Paulo</option>
+        <option value="3">Palmeiras</option>    
+        <option value="4">Santos</option>
+
+    </select>
+
+    <span id="span_msg"></span>
+
+</body>
+</html>
+
+<script>
+
+    function analisar(){
+
+        var timeVar = Number (sel_nome.value);
+
+        if(timeVar == 1){
+
+            span_msg.innerHTML = `Salve o Corinthians`;
+            
+        }else if (timeVar == 2){
+
+            span_msg.innerHTML = `Salve o tricolor paulista`;
+
+        }else if (timeVar == 3){
+
+            span_msg.innerHTML = `Salve o alviverde imponente`;
+
+        }else {
+
+            span_msg.innerHTML = `Agora o que da bola é o Santos`;
+
+        }
+    }
+</script>
