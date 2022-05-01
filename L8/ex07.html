@@ -7,6 +7,45 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Saiba seu poder de compr</h1>
+    <h1>Saiba seu poder de compra</h1>
+
+    <input type="Number" id="inp_valor" placeholder="Quanto economizou?" autofocus>
+
+    <button onclick="valor()">Poder de Compra</button> <br>
+    
+    <span id="span_msg"></span> 
+    <span id="span_msg2"></span> 
+    <span id="span_msg3"></span> 
+
 </body>
 </html>
+
+<script>
+
+    function valor(){
+
+        var valorVar = Number(inp_valor.value);
+
+        if(valorVar <= 0){
+
+            span_msg.innerHTML = `Nada de compras`;
+
+        }else if (valorVar <= 100){
+
+            span_msg.innerHTML = `Viagem de ida e volta para PRAIA GRANDE`;
+
+        }else if (valorVar <= 4000){
+
+            span_msg.innerHTML = `Viagem de ida e volta para PRAIA GRANDE <br>`;
+            span_msg2.innerHTML = `Uma boa moto usada <br>`;
+
+        }else {
+
+            span_msg.innerHTML = `Viagem de ida e volta para PRAIA GRANDE <br>`;
+            span_msg2.innerHTML = `Uma boa moto usada <br>`;
+            span_msg3.innerHTML = `Mais alguma bobagem legal`;
+            
+        }
+        
+    }
+</script>
