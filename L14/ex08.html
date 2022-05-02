@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Coloque um número de 0 a 200</h1>
+
+    <input type="number" id="inp_num" placeholder="Digite o Número" autofocus>
+    <br>
+    <button onclick="calc()">Viva o 7!</button>
+
+    <span id="span_msg"></span> 
+
+</body>
+</html>
+
+<script>
+
+
+    function calc(){
+
+        var inicioVar = 0;
+
+        var numeroVar = Number(inp_num.value);
+
+        if(numeroVar >= 0 && numeroVar <= 100){
+
+            while(inicioVar <= numeroVar){
+
+                if(inicioVar % 7 == 0){
+
+                    span_msg.innerHTML += `<br> ${inicioVar}`; 
+                    inicioVar++;
+
+                }else {
+                    inicioVar ++;
+                }
+            }
+        
+        }else{
+            alert("O número tem que estar entre 0 e 100");
+        }
+    }
+</script>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Digite dois Números de Maneira Crescente</h1>
+
+    <input type="number" id="inp_num" placeholder="Digite o Número" autofocus>
+    <br>
+    <input type="number"id="inp_num2" placeholder="Digite outro Número">
+    <button onclick="calc()">Viva o 7!</button>
+
+    <span id="span_msg"></span> 
+
+</body>
+</html>
+
+<script>
+
+    function calc(){
+
+        span_msg.innerHTML = '';
+        var numeroVar = Number(inp_num.value);
+        var numero2Var = Number(inp_num2.value);
+
+        if(numeroVar >= numero2Var){
+            alert("Números inválidos")
+
+        }else{
+            while(numeroVar <= numero2Var){
+
+                if(numeroVar % 7 == 0 ){
+                    span_msg.innerHTML += `<br>${numeroVar}`;
+                    numeroVar++;
+
+                }else {
+                    numeroVar++;
+                }
+            }
+        }
+    }
+            
+</script>

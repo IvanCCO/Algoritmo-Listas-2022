@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Numéros de vezes</h1>
+
+    <input type="number" id="inp_num" placeholder="Digite um numero de 1 a 10" autofocus>
+    <input type="text"id="inp_frase" placeholder="Digite uma frase"> <br><br>
+
+    <button onclick="loop()">Papagaiao</button>
+
+    <span id="span_msg"></span>
+
+
+</body>
+</html>
+
+<script>
+
+    
+    function loop(){
+        
+        span_msg.innerHTML = '';
+        var inicioVar = 0;
+        var numero = Number (inp_num.value);
+        var fraseVar = inp_frase.value;
+
+        if(numero >= 1 && numero <= 10 && fraseVar != ''){
+
+            while(inicioVar < numero){
+
+                span_msg.innerHTML += `<br>${fraseVar}`;
+                alert(fraseVar);
+                inicioVar ++;
+            }
+        }else {
+            alert("Digite um numero válido");
+        }
+    }
+</script>
