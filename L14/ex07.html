@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Um número de 20 a 100</h1>
+
+    <input type="number" id="inp_num" placeholder="Digite o numero">
+    <br><br>
+    <button onclick="calc()">Adoro múltiplos de 5</button>
+
+    <span id="span_msg"></span>
+
+</body>
+</html>
+
+<script>
+
+ 
+    var inicio = 5;
+
+    function calc(){
+
+        var numeroVar = Number (inp_num.value);
+
+            if(numeroVar >= 20 && numeroVar <= 100){
+
+                while(inicio <= numeroVar){
+
+                    if(inicio % 5 == 0){
+
+                        span_msg.innerHTML += (inicio);
+                        inicio++;
+
+                    }else{
+                        inicio ++;
+                    }
+                }
+            }
+    }
+</script>
