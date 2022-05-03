@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <h1>
+        Títulos Mundiais FIFA
+    </h1>
+
+    <input type="number" autofocus placeholder="Quantidade de Títulos" id="inp_num">
+
+    <button onclick="calc()">Ver troféus de Mundiais Fifa</button>
+
+    <div id="div_img" style="display: none;">
+    <img src="#" style="height: 100px; width: 150px;" id="id_img">
+</div>
+
+</body>
+</html>
+
+<script>
+
+    function calc(){
+
+    
+        var inicioVar = 1;  
+        var numeroVar = Number (inp_num.value);
+        var imagem = id_img.value;
+
+        if(numeroVar <= 0){
+            
+            div_img.style.display = 'block';
+            id_img.src = 'palmeiras-mundial.jpeg';
+
+        }else{
+            div_img.style.display = 'block';
+            id_img.src = 'corinthians-mundial.jpg';
+
+            while(inicioVar < numeroVar){
+
+                div_img.innerHTML += (div_img);
+                inicioVar++;
+            }
+        }
+
+    }
+</script>
