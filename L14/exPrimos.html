@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade-Primos</title>
+</head>
+<body>
+    <h1>Senhor Beneticto</h1>
+
+    <p>Coloque 2 números em intervalos crescentes</p>
+
+    <input type="number" id="inp_num1" autofocus placeholder="Número 1">
+    <input type="number" id="inp_num2" placeholder="Número 2">
+
+    <br>
+    <button onclick="ver()">Ver Primos</button>
+
+    <div id="Pai" style="display: flex; flex-direction: row; justify-content: space-between; width: fit-content;">
+    <div id="div_2">
+        <span id="span_2"></span>
+    </div>
+    <div id="div_3">
+        <span id="span_3"></span>
+    </div>
+    <div id="div_5">
+        <span id="span_5"></span>  
+    </div>
+    <div id="div_7">
+        <span id="span_7"></span>
+    </div>
+    <div id="div_11">
+        <span id="span_11"></span>
+    </div>
+    <div id="div_13">
+        <span id="span_13"></span>
+    </div>
+    <div id="div_nao">
+        <span id="span_nao"></span>
+    </div>
+    <div id="div_msgFinal">
+        <span id="span_msgFinal"></span>
+    </div>
+</div>
+
+</body>
+</html>
+
+<script>
+
+    
+    function ver (){
+        
+        var somaPrimosVar = 0;
+        var qntNumeros = 0;
+
+        span_2.innerHTML = '';
+        span_3.innerHTML = '';
+        span_5.innerHTML = '';
+        span_7.innerHTML = '';
+        span_11.innerHTML = '';
+        span_13.innerHTML = '';
+        span_nao.innerHTML = '';
+        span_msgFinal.innerHTML = '';
+
+
+
+        var numeroInicioVar = Number (inp_num1.value);
+        var numeroFimVar = Number (inp_num2.value);
+
+        if(numeroInicioVar >= numeroFimVar){
+            alert('Os números precisam estar em ordem crescente');
+
+        
+        }else if(numeroInicioVar < 0 || numeroFimVar < 0){
+            alert('Os números precisam ser positivos');
+        }
+        
+        else {
+
+            while(numeroInicioVar  <= numeroFimVar){
+
+                
+
+                if(numeroInicioVar % 2 == 0){
+                    
+                    span_2.innerHTML += `O número ${numeroInicioVar} é par <br>`;
+                    
+
+                }
+                if (numeroInicioVar % 3 == 0){
+                    span_3.innerHTML += `O número ${numeroInicioVar} é divisível por 3 <br>`;
+                    
+                }
+                if(numeroInicioVar % 5 == 0){
+                    span_5.innerHTML += `O número ${numeroInicioVar} é divisível por 5 <br>`;
+                    
+
+                }if (numeroInicioVar % 7 == 0){
+                    span_7.innerHTML += `O número ${numeroInicioVar} é divisível por 7 <br>`;
+                    
+
+                }if (numeroInicioVar % 11 == 0){
+                    span_11.innerHTML += `O número ${numeroInicioVar} é divisível por 11 <br>`;
+                    
+
+                }if (numeroInicioVar % 13 == 0){
+                    span_13.innerHTML += `O número ${numeroInicioVar} é divisível por 13 <br>`;
+                    
+                }
+                if (numeroInicioVar % 2 != 0 && numeroInicioVar % 3 != 0 && numeroInicioVar % 5 != 0 && numeroInicioVar % 7 != 0 &&
+                numeroInicioVar % 11 != 0 && numeroInicioVar % 13 != 0){
+                    span_nao.innerHTML = `O número ${numeroInicioVar} não é divisível pelos principais números primos`;
+                    somaPrimosVar++;
+                }
+
+                numeroInicioVar ++;
+                qntNumeros++;
+                
+            }
+            span_msgFinal.innerHTML = ` O intervalo de ${inp_num1.value} a ${inp_num2.value} tem ${qntNumeros} números, sendo que ${qntNumeros - somaPrimosVar} números são divisíveis por algum número primo.`;
+        }
+
+    }
+</script>

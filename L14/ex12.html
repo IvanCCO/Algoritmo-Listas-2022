@@ -17,8 +17,7 @@
 
     <button onclick="calc()">Ver troféus de Mundiais Fifa</button>
 
-    <div id="div_img" style="display: none;">
-    <img src="#" style="height: 100px; width: 150px;" id="id_img">
+    <div id="div_img" style="height: 150px; width: 150px;">
 </div>
 
 </body>
@@ -28,23 +27,19 @@
 
     function calc(){
 
-    
+        
+        div_img.innerHTML = '';
         var inicioVar = 1;  
         var numeroVar = Number (inp_num.value);
-        var imagem = id_img.value;
 
         if(numeroVar <= 0){
             
-            div_img.style.display = 'block';
-            id_img.src = 'palmeiras-mundial.jpeg';
+            div_img.innerHTML = ` <img src="imagens/palmeiras-mundial.jpeg">`
 
         }else{
-            div_img.style.display = 'block';
-            id_img.src = 'corinthians-mundial.jpg';
-
             while(inicioVar < numeroVar){
 
-                div_img.innerHTML += (div_img);
+                div_img.innerHTML += `<img src="imagens/corinthians-mundial.jpg">`;
                 inicioVar++;
             }
         }
