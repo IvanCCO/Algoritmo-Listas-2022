@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button onclick="aviso()">Pare</button>
+    <br>
+    <button onclick="page()">Pense</button> 
+    <br>
+    <button onclick="siga()">Siga</button>
+    <br>
+    <span id="boa"></span>
+</body>
+
+</html>
+
+<script>
+
+
+    function aviso(){
+
+        boa.innerHTML = `<p style='background-color: red; color: white'> Pare e aguarde!</p>`;
+
+    }
+    function page(){
+        boa.innerHTML = `<p style='background-color: black; color: yellow'> Pense se pode seguir em frente ou se deve parar </p>`
+    }
+    function siga(){
+
+        boa.innerHTML = `<p style='background-color: white; color: green'> Pode seguir Adiante ;)</p>`;
+    }
+</script>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button onclick="aviso()">Boas Vindas Alert</button>
+    <br>
+    <button onclick="page()">Boas vindas página</button> <br>
+    <span style='background-color: black; color:yellow' id="boa"></span>
+</body>
+
+</html>
+
+<script>
+
+
+    function aviso(){
+
+        alert("Boas vindas")
+
+    }
+    function page(){
+
+        boa.innerHTML = `Boas vindas`
+    }
+</script>
