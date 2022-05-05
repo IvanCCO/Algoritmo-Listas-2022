@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Uber Drive</h1>
+
+    <p>Contar a quantidade de Passageiros</p>
+
+    <input type="number" id="inp_num" autofocus placeholder="Número de Passageiros">    
+    <input type="number" id="inp_limite" placeholder="Até quanto suporta?">
+    <br><br>
+    <button onclick="ver()">#PartiuCarona</button>  
+    <br><br>
+    <span id="span_msg"></span>
+
+</body>
+</html>
+
+<script>
+
+    function ver(){
+
+        var numeroVar = Number(inp_num.value);
+        var limiteVar = Number(inp_limite.value);
+        var inicioVar = 1;
+        span_msg.innerHTML = '';
+
+        if (numeroVar <= 0){
+            alert('Isso não faz sentido');
+
+        }else{
+
+            while (inicioVar <= numeroVar){
+
+                if(inicioVar == 1){
+                    span_msg.innerHTML += `Entrou o primeiro Passageiro (Que é o motorista) <br> <br>`;
+
+                }else if (inicioVar <= limiteVar){
+                    span_msg.innerHTML += `Entrou o ${inicioVar}° passageiro no carro <br> <br>`;
+
+                }else {
+                    span_msg.innerHTML += `O passageiro ${inicioVar} terá que esperar <br> <br>`;
+                }
+
+                inicioVar++;
+            }
+        }
+    }
+</script>

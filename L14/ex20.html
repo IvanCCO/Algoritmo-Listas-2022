@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--20.	Crie um programa que simule o trajeto que um estudante do extremo leste da capital faz para chegar na SPTech:
+a) Pergunte ao usuário quantos ônibus precisa pegar
+b) Pergunte ao usuário quantos trens precisa pegar
+c) Pergunte ao usuário quantos metrôs precisa pegar
+d) Ao clicar num botão "#Partiu Trajeto"...
+e) Deve exibir, abaixo do botão, na cor vermelha, frases como estas, de acordo com a quantidade de ônibus indicadas em a)
+	Pegando o 1º buzão
+	Pegando o 2º buzão
+f) Deve exibir, abaixo das frases de e), na cor verde, frases como estas, de acordo com a quantidade de trens indicadas em b)
+	Pegando o 1º trem
+	Pegando o 2º trem
+g) Deve exibir, abaixo das frases de f), na cor azul, frases como estas, de acordo com a quantidade de metros indicadas em c)
+	Pegando o 1º metrô
+	Pegando o 2º metrô
+-->
+
+<h1>SPTECH até Itaquerão</h1>
+
+<p>Quantos ônibus precisa pegar?</p>
+<input type="number" id="inp_onibus" placeholder="Ônibus">
+<p>Quantos trens precisa pegar?</p>
+<input type="number" id="inp_trem" placeholder="Trem">
+<p>Quantos metros precisa pegar?</p>
+<input type="number" id="inp_metro" placeholder="Metro">
+
+<br><br>
+
+<button onclick="loop()">#PartiuTrajeto</button>
+<br><br>
+<span style='color:red' id="span_onibus"></span>
+<span style='color: green' id="span_trem"></span>
+<span style='color:blue' id="span_metro"></span>
+
+
+</body>
+</html>
+
+<script>
+
+// Não sei onde fica a tecla de posição no meu teclado. Não é que nem os outros 
+    function loop(){
+
+        var onibusVar = Number (inp_onibus.value);
+        var tremVar = Number (inp_trem.value);
+        var metroVar = Number (inp_metro.value);
+        var inicioVar = 0;
+
+        if(onibusVar == '' && tremVar == '' && metroVar == ''){
+            alert('Então você vai de carro');
+
+        }else{
+
+            while(inicioVar < onibusVar){
+
+                inicioVar ++;
+                span_onibus.innerHTML += `Pegando o ${inicioVar}² busão <br>`;
+            }
+
+            inicioVar = 0;
+
+            while (inicioVar < tremVar){
+
+                inicioVar++;
+                span_trem.innerHTML += `Pegando o ${inicioVar}² trem <br>`;
+
+            }
+            inicioVar = 0;
+
+            while(inicioVar < metroVar){
+
+                inicioVar++;
+                span_metro.innerHTML += `Pegando o ${inicioVar}² metro <br>`;
+            }
+        }
+    }
+</script>
