@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Peso médio elevador</h1>
+    <p>Quantidade de homens</p>
+    <input type="number" id="inp_homem" autofocus>
+    <p>Quantidade de Mulheres</p>
+    <input type="number" id="inp_mulher">
+    <br>
+    <br>
+    <button onclick="calc()">Analisar peso</button>
+    <span  id="span_msg"></span>
+
+</body>
+</html>
+
+<script>
+
+    function calc(){
+
+        pesoHomemVar = Number(inp_homem.value) * 80;
+        pasoMulherVar = Number(inp_mulher.value) * 60;
+        pesoTotalVar = pasoMulherVar + pesoHomemVar;
+
+        span_msg.innerHTML = `Este elevador suporta até 800kg. O peso estimado dessa lotação é de ${pesoTotalVar.toFixed(2)} Kg <br>`
+
+        if (pesoTotalVar > 800){
+
+            span_msg.style.color = 'blue';
+            span_msg.innerHTML += `Será necessário descer alguém para que o elevador se movimente`;
+        }
+    }
+</script>

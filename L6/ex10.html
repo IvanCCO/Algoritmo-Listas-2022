@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Sitcom</h1>
+
+    <p>Informe a última séria sitcom que vocÊ assistiu</p>
+    <input type="text" id="inp_nome" placeholder="Digite aqui" autofocus>
+    <p>Informe o total de episódios vistos</p>
+    <input type="number" id="inp_num" placeholder="Digite aqui">
+    <br><br>
+    <button onclick="calc()">Verificar nível</button>
+    <br><br>
+    <span id="span_msg"></span>
+
+</body>
+</html>
+
+<script>
+
+    function calc(){
+
+        var nomeVar = inp_nome.value;
+        var numeroVar = inp_num.value;
+        var horasVar = numeroVar * 22 / 60;
+
+        span_msg.innerHTML = `Vejo que você gosta de série ${nomeVar} <br>`
+
+        if(horasVar > 30){
+
+            span_msg.innerHTML += `Você realmente gosta dessa série já viu um total de ${horasVar.toFixed(2)} horas. Vá viver!}`
+        }
+    }
+</script>

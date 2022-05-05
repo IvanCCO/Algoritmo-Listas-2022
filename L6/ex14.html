@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Situação escolar</h1>
+
+    <p>Digite a nota 1</p>
+    <input type="text" id="inp_nota1">
+    <p>Digite a nota 2</p>
+    <input type="text" id="inp_nota2">
+    <br><br>
+    <button onclick="calc()">Ver Situação</button>
+    <br><br>
+    <span id="span_msg"></span>
+    
+</body>
+</html>
+
+<script>
+    function calc(){
+
+        var nota1 = Number(inp_nota1.value);
+        var nota2 = Number(inp_nota2.value);
+        var media = (nota1 + nota2) / 2;
+
+        if(media >= 6){
+
+            span_msg.innerHTML = `Parabéns você foi aprovado!`;
+            span_msg.innerHTML += `Sua nota média foi de ${media}`
+
+        }else {
+
+            span_msg.innerHTML = `Infelizmente não foi dessa vez!`;
+            span_msg.innerHTML += `Sua nota média foi de ${media}`
+        }
+    }
+    
+</script>

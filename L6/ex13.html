@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Peso elevador</h1>
+    <input type="number" id="inp_peso" autofocus>
+    <br>
+    <br>
+    <button onclick="calc()">Analisar peso</button>
+    <span  id="span_msg"></span>
+   
+
+</body>
+</html>
+
+<script>
+
+    function calc(){
+
+        pesoVar = Number(inp_peso.value);
+        
+        if(pesoVar < 500){
+            span_msg.innerHTML = `Elevador vai se mover`;
+
+        }else{
+
+            span_msg.innerHTML = `Alguém precisa descer do elevador`;
+        }
+    }
+</script>

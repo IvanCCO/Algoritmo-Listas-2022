@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Saldo em banco</h1>
+
+     <p>Informe seu saldo bancário</p>
+
+     <input type="number" id="inp_num" placeholder="Digite aqui">
+
+     <br>
+
+     <button onclick="calc()">Verificar Finanças</button>
+
+     <span id="span_msg"></span>
+
+</body>
+</html>
+
+<script>
+
+    function calc(){
+
+        var saldoVar = Number(inp_num.value);
+
+        if (saldoVar == 0){
+
+            span_msg.style.color = 'black';
+            span_msg.innerHTML = `Conta zerada`;
+
+        }else if (saldoVar > 0){
+
+            span_msg.style.color = 'blue';
+            span_msg.innerHTML = `Saldo positivo`;
+
+        }else {
+
+            span_msg.style.color = 'red';
+            span_msg.innerHTML = `Você está devendo`;
+        }
+    }
+</script>

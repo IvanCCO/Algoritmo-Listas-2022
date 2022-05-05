@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Banco Itado</h1>
+
+    <input type="number" id="inp_saldo" placeholder="Saldo da conta" autofocus>
+    <input type="number" id="inp_valor" placeholder="Valor do débito">
+    <br>
+    <button onclick="calc()">Analisar Conta</button>
+    <br>
+    <br>
+    <span style='font-weight:bold' id="span_msg"></span>
+
+</body>
+</html>
+
+<script>
+
+    function calc(){
+
+        var saldoVar = Number(inp_saldo.value);
+        var valorVar = Number(inp_valor.value);
+        var calcularVar = saldoVar - valorVar;
+
+        if(calcularVar < 0){
+
+            span_msg.innerHTML = `<p style='color: red;'> O saldo da sua conta corrente é de ${calcularVar.toFixed(2)} reais </p>`;
+
+        }else {
+
+            span_msg.innerHTML = ` O saldo da sua conta corrente é de ${calcularVar.toFixed(2)} reais`;
+        }
+    }
+</script>
