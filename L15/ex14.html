@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Quantidade de depósitos</h1>
+
+    <p>Quantos depósitos você fez no banco</p>  
+    <input type="number" id="inp_num" placeholder="Quantidade de depósito">
+    <br>
+    <p>Qual o valor dos depósitos</p>
+    <input type="text" id="inp_valor">
+    <br><br>
+
+    <button onclick="calc()">Calcular</button>
+
+    <br>
+    <br>
+    <span id="span_msg"></span>
+
+</body>
+</html>
+
+<script>
+
+    function calc(){
+
+        var depositoVar = Number (inp_num.value);
+        var valorVar = Number (inp_valor.value);
+
+        for(i = 1; i <= depositoVar; i++){
+
+            span_msg.innerHTML += `${i}° Mês: R${valorVar * i} reais <br>`;
+        }
+
+    }
+</script>

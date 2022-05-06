@@ -7,27 +7,30 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Cafés com leite que ja bebeu na vida</h1>
+    <h1>Ghost</h1>
+
+    <p>Quantidade de elefantes</p>
     <input type="number" id="inp_num" placeholder="Digite aqui" autofocus>
     <br>
-    <button onclick="loop()">Ver quantidade</button>
+    <br>
+    <button onclick="loop()">Atazanar a Medium</button>
     <br><br>
+
     <span id="span_msg"></span>
 
 </body>
-</html>
+</htm>
 
 <script>
 
     function loop(){
-    
 
-        var leiteVar = Number(inp_num.value);
-        span_msg.innerHTML = '';
-      
-        for (i = 1; i <= leiteVar; i++ ){
+        var numeroFinal = Number (inp_num.value);
+        var elefante = String('elefante');
 
-            span_msg.innerHTML += `Você já tomou ${i} colheres de leite e ${i * 2} colheres de café <br>`;
-        }   
-         }
+        for (i = 0; i < numeroFinal; i ++){
+
+            
+        }
+    }
 </script>
