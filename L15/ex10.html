@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Números Cabalísticos</h1>
+    <p>Escondendo eles</p>
+    <button onclick="calc()">Números</button>
+     <br>
+     <br>
+     <span id="span_msg"></span>
+
+</body>
+</html>
+
+<script>
+
+    function calc(){
+
+        for (i = 1; i <= 15; i++){
+
+            if (i != 3 && i != 4 && i != 7 && i != 10 && i != 12){
+
+                span_msg.innerHTML += `${i}<br>`;
+            }
+        }
+    }
+</script>
