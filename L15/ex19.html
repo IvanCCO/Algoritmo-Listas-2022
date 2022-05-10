@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <H1>Fases da vida</H1>
+
+    <p>Existe um limitador de 110 para não travar o pc</p>
+
+    <p>Sua idade</p>
+    <input type="number" id="inp_idade" onkeyup="ver()" placeholder="Digite aqui" autofocus>
+    <br>
+    <span id="span_msg"></span>
+    
+
+</body>
+
+</html>
+
+<script>
+
+    function  ver(){
+
+        span_msg.innerHTML = '';
+        
+        var idadeVar = Number(inp_idade.value);
+
+        if(idadeVar > 110){
+            alert('Não trave o PC');
+        }else{
+        
+            for(i = 0; i <= idadeVar; i++){
+
+                if(i <= 4){
+
+                    span_msg.innerHTML += `${i}  anos (Primeira infância)<br> `;
+
+                }else if(i <= 6){
+
+                    span_msg.innerHTML += ` ${i} anos (Pré Escolar) <br>`;
+    
+                }else if (i <= 10){
+
+                    span_msg.innerHTML += `${i} anos (Segunda Infância) <br>`;
+
+                }else if (i <= 18){
+
+                    span_msg.innerHTML += `${i} anos (Adolecência) <br>`;
+
+                }else if (i <= 50){
+
+                    span_msg.innerHTML += `${i} anos (Adulto) <br>`;
+
+                }else if (i <= 100){
+
+                    span_msg.innerHTML += `${i} anos (Melhor idade) <br> `;
+
+                }else {
+
+                    span_msg.innerHTML += `${i} anos (Matusalém) <br>`;
+
+                }       
+
+            }
+        }
+    }
+</script>

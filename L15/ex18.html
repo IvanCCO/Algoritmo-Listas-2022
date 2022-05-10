@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Voltas que o usuário dá</h1>
+    <input type="number" id="inp_volta" placeholder="Quantidade de voltas" autofocus>
+    
+    <button onclick="calc()">Iniciar Corrida</button> <br>
+
+    <span id='span_msg'></span>
+
+
+</body>
+</html>
+
+<script>
+
+    function calc(){
+
+    span_msg.innerHTML = '';
+    var voltaVar = Number (inp_volta.value);
+
+    if(voltaVar <= 0 ){
+
+        alert('Você não deu nenhuma volta');
+
+    }else{
+
+        for(i = 1; i <= voltaVar; i++){
+            //Não encontrei no meu teclado a tecla de posição, pois o teclado é diferente do padrão!
+            span_msg.innerHTML += `<br>Carro dando a ${i}¶ volta <br>`;   
+        }
+
+        span_msg.innerHTML += `<br>Corrida finalizada`;
+    }
+
+
+    }
+
+
+</script>
