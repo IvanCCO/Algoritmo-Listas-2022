@@ -14,7 +14,11 @@
     <input type="number" id="inp_num" placeholder="Quantidade de depósito">
     <br>
     <p>Qual o valor dos depósitos</p>
+<<<<<<< HEAD
+    <input type="text" id="inp_valor">
+=======
     <input type="text" id="inp_valor" placeholder="Valor do depósito">
+>>>>>>> 18fd1c536af7d8730363e6f8a7fe2b4397bdbda5
     <br><br>
 
     <button onclick="calc()">Calcular</button>
@@ -28,6 +32,30 @@
 
 <script>
 
+<<<<<<< HEAD
+    function calc(){
+
+        var depositoVar = Number (inp_num.value);
+        var valorVar = Number (inp_valor.value);
+        var calculoVar = valorVar + (valorVar * 0.01);
+        
+
+
+        for(i = 1; i <= depositoVar; i++){
+
+            if(i % 3 == 0){
+
+                span_msg.innerHTML +=  `${i}° Mês: R${calculoVar * i} reais <br>`;
+
+            }else{
+
+            valorVar += calculoVar; 
+            span_msg.innerHTML += `${i}° Mês: R${valorVar * i} reais <br>`;
+            }
+        }
+
+    }
+=======
     var saldoVar = 0;
 
     function calc(){
@@ -59,4 +87,5 @@
     }
 
   
+>>>>>>> 18fd1c536af7d8730363e6f8a7fe2b4397bdbda5
 </script>
