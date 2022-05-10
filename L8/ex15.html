@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Brasileirão</h1>
+
+    <p>Quantas partidas jogou?</p>
+    <input type="text" id="inp_partida">
+    <p>Quantos gols você marcou?</p>
+    <input type="text" id="inp_gols">
+    <br><br><br>
+    <button onclick="calc()">Analisar jogador</button>
+    <br><br><br>
+    <span id="span_msg"></span>
+    <span id="msg_final"></span>
+
+
+</body>
+</html>
+
+<script>
+
+
+    function calc(){
+
+        var partidaVar = Number(inp_partida.value);
+        var golsVar = Number(inp_gols.value);
+        var mediaVar = golsVar / partidaVar;
+
+        if(mediaVar < 0.2){
+            span_msg.innerHTML = `Melhor mudar de posição <br>
+            <img src='imagens/balada.jpg'>`;
+
+        }else if (mediaVar < 0.6){
+            span_msg.innerHTML = `Atacamente mediano <br>
+            <img src = 'imagens/jonaldo.webp'>`;
+
+        }else{
+            span_msg.innerHTML = `Atacante do futuro <br>
+            <img src = 'imagens/ney.jpg'>`;
+        }
+
+        msg_final.innerHTML = `<br>Sua média de gols/partida foi de ${mediaVar}, está bom?`
+
+    }
+</script>

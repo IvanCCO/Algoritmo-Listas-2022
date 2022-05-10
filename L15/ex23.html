@@ -26,11 +26,19 @@
     function loop(){
 
         var numeroFinal = Number (inp_num.value);
-        var elefante = String('elefante');
+        var elefante = ', incomodam, incomodam'
 
-        for (i = 0; i < numeroFinal; i ++){
+        if(numeroFinal <= 1){
+            alert('Precisa de no mínimo 2 elefantes')
+            span_msg.innerHTML = '';
+        }
 
-            
+        for (i = 2; i <= numeroFinal; i ++){
+
+            span_msg.innerHTML += `1 elefante incomoda muita gente <br>
+            ${i} elefantes ${elefante} muito mais <br>`;
+
+            elefante += ", incomodam";
         }
     }
 </script>
