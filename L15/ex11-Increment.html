@@ -70,15 +70,22 @@
                 if (limiteInferiorVar % divisorVar == 0){
 
                     for(i = 1; i <= 1; i++){
-                    var maiorVar = 0;
-                    maiorVar += limiteInferiorVar;
+                    var maiorVar = 99;
+                    if (limiteInferiorVar < maiorVar){
+                    maiorVar = limiteInferiorVar;
                 }
-                
-
+                    
+                }
                     span_msg.innerHTML += `${limiteInferiorVar}<br>`;
                     quantidadeVar++;
-                    somaVar += limiteInferiorVar;     
+                    somaVar += limiteInferiorVar; 
+                    if(quantidadeVar == 1){
+                        var menor = 0;
+                        menor = somaVar;
+                    }    
                 }
+                
+                
                 
                 
             }
@@ -88,7 +95,7 @@
                                             A soma dos números exibidos é ${somaVar}<br>
                                             A média dos números exibidos é ${mediaVar}<br>
                                             O maior número é ${maiorVar}<br>
-                                           `;
+                                            O menor número é ${menor}`;
                                            
                                             
 
