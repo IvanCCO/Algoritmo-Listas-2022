@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Sistema de avaliação</h1>
+
+    <h3>De uma nota</h3>
+
+    <button onclick="one()">1 ESTRELA</button>
+    <button onclick="two()">2 ESTELAS</button>
+    <button onclick="three()">3 ESTRELAS</button>
+    <button onclick="four()">4 ESTRELAS</button>
+    <button onclick="five()">5 ESTRELAS</button>
+
+
+    <br><br><br>
+
+    <p>Sua Avaliação<span style="font-size: 20px" id="span_msg"></span></p>
+
+
+</body>
+
+
+</html>
+
+<script>
+
+    var somaVar = 0;
+    var countVar = 0;
+
+    function one(){
+        somaVar++;
+        countVar++;
+        span_msg.innerHTML = `${(somaVar / countVar).toFixed(1)} estrelas`
+    }
+
+    function two(){
+        somaVar += 2;
+        countVar++;
+        span_msg.innerHTML = `${(somaVar / countVar).toFixed(1)} estrelas`
+    }
+    function three(){
+        somaVar += 3;
+        countVar++;
+        span_msg.innerHTML = `${(somaVar / countVar).toFixed(1)} estrelas`
+    }
+    function four(){
+        somaVar += 4;
+        countVar++;
+        span_msg.innerHTML = `${(somaVar / countVar).toFixed(1)} estrelas`
+    }
+    function five(){
+        somaVar += 5;
+        countVar++;
+        span_msg.innerHTML = `${(somaVar / countVar).toFixed(1)} estrelas`
+    }
+
+
+
+</script>
