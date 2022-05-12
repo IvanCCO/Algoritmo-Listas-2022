@@ -32,7 +32,6 @@
 
 <script>
 
-<<<<<<< HEAD
     function calc(){
 
         var depositoVar = Number (inp_num.value);
@@ -55,37 +54,4 @@
         }
 
     }
-=======
-    var saldoVar = 0;
-
-    function calc(){
-
-        var depositoVar = Number (inp_num.value);
-        var valorVar = Number(inp_valor.value);
-        
-        for(i = 1; i <= depositoVar; i++){
-            
-            saldoVar += valorVar;
-            
-            if (i % 3 != 0){
-                
-                
-                span_msg.innerHTML += `${i} mês: R$ ${saldoVar} <br>`;
-                
-            }else {
-                
-                
-                var descontoVar = saldoVar * 0.01;
-                saldoVar += descontoVar;
-                span_msg.innerHTML += `${i} mês: R$ ${saldoVar} <br>`;
-                
-                
-            }
-            
-            
-        }
-    }
-
-  
->>>>>>> 18fd1c536af7d8730363e6f8a7fe2b4397bdbda5
 </script>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Seus filmes preferidos</h1>
+    <input type="text" id="inp_filme" placeholder="Nome do filme">
+    <br><br>
+    <button onclick="cadastrar()">Cadastrar</button>
+    <br><br><br>
+
+    <span id="span_msg"></span>
+
+    
+</body>
+</html>
+
+
+<script>
+
+    var guardar = [];
+    function cadastrar(){
+
+        var filmeVar = inp_filme.value;
+
+        guardar.push(filmeVar);
+
+        span_msg.innerHTML = `Seu filme Favorito é ${guardar[0]}<br>`;
+        if(guardar.length >= 3){
+        span_msg.innerHTML += `Seu terceiro filme favorito é ${guardar[2]}<br>`;
+        }
+        span_msg.innerHTML += `Total de filmes Cadastrados: ${guardar.length}`;
+    }
+</script>

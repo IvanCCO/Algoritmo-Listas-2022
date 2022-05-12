@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Coloque os bairros onde você morou</h1>
+    <input type="text" id="inp_bairro" placeholder="Bairros onde morou">
+    <br><br>
+    <button onclick="cadastro()">Cadastrar</button>
+    <br>
+    <input type="text" id="inp_num" placeholder="digite um número">
+    <button onclick="lembrar()">Relembrar</button>
+    <span id="span_msg"></span>
+
+</body>
+</html>
+
+<script>
+
+    var arrayGuardar = [];
+
+    function cadastro(){
+
+        arrayGuardar.push(inp_bairro.value);
+
+        inp_bairro.value = '';
+
+    }
+
+    function lembrar(){
+        var numeroVar = Number(inp_num.value);
+
+        if (numeroVar > arrayGuardar.length){
+            alert('Voce nao morou em tantos lugares assim')
+    }else {
+        
+
+        span_msg.innerHTML = `${arrayGuardar[numeroVar - 1]}`;
+    }
+    }
+
+
+</script>

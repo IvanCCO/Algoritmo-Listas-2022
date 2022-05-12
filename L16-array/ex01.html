@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Destino de Viagem</h1>
+    <input type="text" id="inp_viagem" placeholder="Nome do Lugar" autofocus>
+    <button onclick="incluir()">Adicionar</button>
+    <br>
+    <button onclick="primeira()">Primeira Viagem</button>
+    <button onclick="terceira()">Terceira Viagem</button>
+    <button onclick="ultima()">Última Viagem</button>
+    <br><br><br>
+    <span id="span_msg"></span>
+    <span id="span_len"></span>
+
+</body>
+</html>
+
+<script>
+
+    var guardar = [];
+    
+    function incluir(){
+
+        guardar.push(inp_viagem.value);
+        inp_viagem.value = '';
+        span_len.innerHTML += `${guardar[guardar.length - 1]}, <br>`
+
+    }
+
+    function primeira(){
+        
+        if (guardar.length <= 0){
+            alert('Você ainda não viajou');
+        }else {
+            span_msg.innerHTML = `Sua primeira viagem foi para ${guardar[0]}`;
+        }
+    }
+
+    function terceira(){
+        
+        if (guardar.length < 3){
+            alert('Você não viajou 3 vezes');
+        }
+        else{
+            span_msg.innerHTML += `Você viajou na terceira viagem para ${guardar[2]}`;
+        }
+    }
+
+    function ultima(){
+        if(guardar.length <= 0){
+            alert('Você não fez nenhuma viagem ainda');
+        }else {
+
+            span_msg.innerHTML += `Sua última viagem foi pra ${guardar[guardar.length - 1]}`;
+        }
+    }
+    
+</script>
