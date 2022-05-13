@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Filmes que mais gosta</h1>
+
+    <input type="text" id="inp_filme" placeholder="Nome do filme">
+    <br>
+    <button onclick="cad()">Cadastrar</button>
+    <br>
+    <span id="span_msg"></span>
+
+</body>
+</html>
+
+<script>
+
+    var guardar = [];
+
+    function cad(){
+
+        var filmeVar = inp_filme.value;
+        
+        if(filmeVar == ''){
+            alert('Você precisa colocar um nome de um filme');
+
+        }else {
+
+            guardar.push(filmeVar);
+            console.log(guardar);
+            filmeVar = '';
+            
+            if(guardar.length % 2 == 0){
+                span_msg.innerHTML += `<p style='color:red'>${guardar[guardar.length - 1]} </p> `;
+    
+            }else {
+                span_msg.innerHTML += `<p style='color:blue'>${guardar[guardar.length - 1]} </p>`;
+            }
+        }
+
+        
+
+        
+    }
+</script>

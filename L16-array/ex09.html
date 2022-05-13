@@ -7,32 +7,65 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Lista de projetos</h1>
-
-    <input type="text" id="inp_projeto" placeholder="Nome do projeto">
-    <br><br>
-    <button onclick="mostrar()">Registrar Projeto</button>
-    <span id="span_msg"></span>
+    <h1>Nome de Cada projeto</h1>
+    <input type="text" id="inp_nome" placeholder="nome do projeto">
+    <br>
+    <button onclick="registrar()">Registrar Projeto</button>
+    <button onclick="mostrar()">Mostrar projetos</button>
+    <br>
+    <span id="span_msg"></span> <br>
+    <span id="span_projeto"></span>
 
 </body>
 </html>
 
 <script>
 
-    var guardar = []
-    var cargo = 0;
+    var projetos = [];
+    var nomeVar = '';
+    
+    function registrar(){
+
+        nomeVar += inp_nome.value;
+
+        if(nomeVar == ''){
+
+            alert('Você precisa colocar um valor válido');
+
+        }else {
+
+            projetos.push(nomeVar);
+            nomeVar = '';
+
+            if(projetos.length <= 4){
+
+                span_msg.innerHTML = `Você já fez ${projetos.length} projetos. Por isso você é um profissional Júnior`;
+
+            }else if (projetos.length <= 12){
+
+                span_msg.innerHTML = `Você já fez ${projetos.length} projetos. Por isso você é um profissional  Pleno`;
+
+            }else {
+                span_msg.innerHTML = `Você já fez ${projetos.length} projetos. Por isso você é um profissional Sênior`;
+
+            }
+        }
+    }
+
     function mostrar(){
-        
-        var projetoVar  = inp_projeto.value;
-        span_msg.innerHTML = '';
-        guardar.push(projetoVar);
-        
 
-        if (guardar.length){
+        span_projeto.innerHTML = '';
 
-            
+        if(projetos.length == ''){
+            alert('Você precisa colocar um projeto no mínimo')
+
+        }else {
+
+            for(i = 0; i < projetos.length; i++)
+            span_projeto.innerHTML += `<br> ${projetos[projetos.length - (i + 1)]}`
         }
 
-        span_msg.innerHMTL = `Você já fez ${guardar.length} Projetos. Por isso você é um profissional `;
+
+
     }
 </script>
