@@ -10,19 +10,49 @@
     <h1>Preço dos produtos</h1>
     <input type="Number" placeholder="Digite o preço" id="inp_preco">
     <br>
-    <button onclick="calc()">Verificar</button>
+    <button onclick="calc()">Cadastrar</button>
     <br>
+    <button onclick="att()">Atualizar estoque</button>
+    <br>
+    <br>
+
     <span id="span_msg"></span>
+    <span id="span_conta"></span>
 
 </body>
 </html>
 
 <script>
 
-    var guardar = [];
+   var guardar = [];
+   var soma = 0;
 
     function calc(){
+       
+            var precoVar = Number(inp_preco.value);
+               if (precoVar <= 0)
+               {
+                   alert('Coloque um valor');
+       
+               }else {
+                   guardar.push(precoVar);
+                   console.log(precoVar);
+                   inp_preco.value = '';
+               }
+            }
 
-        var precoVar = inp_preco.value;
-    }
+
+    function att(){    
+
+             span_msg.innerHTML = '';
+             span_msg.innerHTML = `Você tem ${guardar.length} produtos cadastrados em estoque <br>`; 
+
+            for (i = 0; i < guardar.length; i++){
+
+                soma += guardar[i];
+
+                span_conta.innerHTML = `Seu estoque vale ${soma} reais`;
+            }
+        }
+            
 </script>

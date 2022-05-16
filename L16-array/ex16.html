@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Digite um número qualquer</h1>
+
+    <input type="text" id="inp_num" placeholder="Digite aqui">
+    <br><br>
+    <button onclick="analisar()">Analisar Histórico</button> <br>
+
+    <span id="cadastrados"></span> 
+    <br><br>
+    <span id="mm"></span>
+
+</body>
+</html>
+
+<script>
+
+    var guardar = [];
+    var maior = -999;
+    var menor = 999;
+
+    function analisar(){
+
+        var numeroVar = Number(inp_num.value);
+
+        if (numeroVar <= 0){
+
+            alert('Digite um valor válido');
+
+        }else {
+
+            guardar.push(numeroVar);
+            console.log(guardar);
+            inp_num.value = '';
+            cadastrados.innerHTML = '';
+
+            for(i = 0; i < guardar.length; i++){
+
+                cadastrados.innerHTML += `${i+1}¾ <b>Número: ${guardar[i]} </b> <br>`;
+
+                if(guardar[i] < menor){
+                    menor = guardar[i];
+                }
+                if(guardar[i] > maior){
+                    maior = guardar[i];
+                }
+                mm.innerHTML = `O maior número é ${maior} \n e o menor número é ${menor}`;
+            }
+            console.log(menor);
+            console.log(maior);
+        }
+
+
+
+    }
+</script>
