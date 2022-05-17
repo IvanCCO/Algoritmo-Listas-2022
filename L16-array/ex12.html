@@ -7,11 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-<<<<<<< HEAD
-    <h1>Qual o nome do seu filho?</h1>
-</body>
-</html>
-=======
     <h1>Lista de filhos</h1>
 
     <input type="text" id="inp_nome" placeholder="Nome do filho">
@@ -20,7 +15,8 @@
     <br><br>
     <button oncanplay="att()">Atualizar família</button>
     <br><br>
-    <span id="cadastro"></span>
+    <span id="cadastro"></span> <br> <br>
+
     <span id="span_msg"></span>
 
 </body>
@@ -39,28 +35,18 @@
             alert('Você precisa digitar um valor válido');
             
         }else{
-
-            guardar.push(nomeVar);
-
-            for(i = 0; i < guardar.length; i++){
-                
-                if(guardar[i] == guardar){
-                    
-                    
-                    cadastro.innerHTML = `Cadastro inválido para ${guardar[i]} nomes não podem ser iguais`;
-                    
-                }else {
-                    
-                    cadastro.innerHTML = `Cadastro do/da ${guardar[i]} feito com sucesso`;
-                    
-                }
-            }
-            
-            console.log(guardar);
-            
-
-        }
     }
 
+    function cad(){
+
+        for(i = 0; i < guardar.length; i++){
+
+            span_msg.innerHTML = `Você tem ${guardar.length} filhos cadastrados`;
+            span_msg.innerHTML += `${[i + 1]}. ${guardar[i]}`;
+        }
+    }
+}
+
+// cOLOCAR UMA BOOLEANA PRA COMPARAR O PRIMEIRO, OU INDEX OF -1
+
 </script>
->>>>>>> 8d6d8f88f22fa51fac85651f8a8a00ec006314c1

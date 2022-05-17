@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Nome do BID</h1>
+
+    <select  id="combo">
+
+        <option value="0">Indique o Resultado</option>
+        <option value="1">Vitória</option>
+        <option value="2">Empate</option>
+        <option value="3">Derrota</option>
+
+    </select>
+
+    <br><br>
+
+    <button onclick="cad()">Registrar jogo</button>
+
+    <br><br>
+
+    <span id="span_registro"></span>
+
+
+    <input type="Number" id="inp_num" placeholder="Jogo que quer ver" onkeyup="mostrar()">
+
+    <span id="span_mostrar"></span>
+
+
+</body>
+</html>
+
+
+<script>
+
+    // Array que guarda todos os valores, Pontos, Vitoria, empates e derrota
+    var guardar = [0 ,0 ,0, 0]; 
+    var partida = [];
+   
+    
+    function cad(){
+        
+        // Variável guardando a soma das partidas 
+
+        var resultadoVar = combo.value;
+
+        if (resultadoVar == 0){
+
+            alert('Coloque um valor válido');
+
+        }else{
+            
+            partida.push(resultadoVar);
+
+
+            if (resultadoVar == 1){
+
+                guardar[0] += 3;
+                guardar[1]++;
+
+            }else if (resultadoVar == 2){
+
+                guardar[0] += 1;
+                guardar[2] ++;
+
+
+            }else {
+
+                guardar[3]++
+            }
+
+            span_registro.innerHTML = `<br> O time teve: ${guardar[2]} vitórias, ${guardar[3]} Empates, ${guardar[4]} Derrotas`;
+            span_registro.innerHTML += `<br> Pontuação total: ${guardar[1]} pontos`;
+            span_registro.innerHTML += `<br> Aproveitamento`;
+            console.log(guardar);
+        }
+        }
+
+
+        function partida(){
+
+            var partidaVar = inp_num.value;
+
+
+            if (partidaVar > partida.length){
+
+                span_mostrar.innerHTML = `Não foi cadastrado um jogo ${partidaVar}° jogo.`
+
+            }else {
+
+                
+                span_mostrar.innerHTML = `No ${partidaVar}° jogo, o time `;
+            }
+        }
+
+</script>
+
+
+
+

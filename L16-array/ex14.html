@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Loja eletrônica</h1>
+
+    <input type="text" id="inp_nome" placeholder="Nome do produto">
+    <input type="Number" id="inp_preco" placeholder="Preço do Produto">
+
+    <br><br>
+
+    <button onclick='cad()'>Cadastrar</button>
+
+    <button onclick="rel()">Relatório de Estoque</button> <br>
+
+    <span id="span_msg"></span>
+
+</body>
+</html>
+
+
+<script>
+
+    var vt_nome = [];
+    var vt_preco = [];
+
+
+    function cad(){
+
+        var nomeVar = inp_nome.value;
+        var precoVar = Number (inp_preco.value);
+
+        if (nomeVar == '' || precoVar == ''){
+
+            alert('Todos os campos devem ser preenchidos')
+
+        }else {
+
+            vt_nome.push(nomeVar);
+            vt_preco.push(precoVar);
+            inp_nome.value = '';
+            inp_preco.value= '';
+            console.log(vt_nome);
+            console.log(vt_preco);
+        }
+    }
+
+
+    function rel(){
+
+        span_msg.innerHTML = `<br><br>Total de Produto ${vt_preco.length}<br><br><br>`;
+
+        for (i = 0; i < vt_preco.length; i++){
+
+            // Nome do produto produto
+            span_msg.innerHTML += `<br>Produto ${i + 1}: ${vt_nome[i]}<br>`;
+            span_msg.innerHTML += `Preço de compra R$${vt_preco[i]} vender por R$${vt_preco[i] * 1.25}<br>`;
+        }
+
+
+    }
+</script>
