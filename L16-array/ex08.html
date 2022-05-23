@@ -31,7 +31,8 @@
   
         for(i = 0; i < guardar.length; i++){
 
-            span_msg.innerHTML += `${guardar[guardar.length - (i + 1)]}<br>`;
+            span_msg.innerHTML = '';
+            span_msg.innerHTML = `${guardar[guardar.length - (i + 1)]}<br>`;
         }
     }
 </script>
