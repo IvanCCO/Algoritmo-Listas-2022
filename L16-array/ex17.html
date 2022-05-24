@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="form" style="color: rgb(177, 113, 113);">
+        <h1>Análise de Perfomance</h1>
+        <p>Entre com o Nome do Aluno:</p>
+        <input type="text" id="inp_nome">
+        <p>Entre com a Nota do Aluno</p>
+        <input type="Number" id="inp_nota">
+        <br><br>
+        <button onclick="reg()">Registrar</button>
+        <button onclick="ana()">Analisar</button>
+
+        <span id="span_msg" style="color: rgb(180, 104, 104);"></span> 
+    </div>
+
+    <div id="div2" style="display:none; color: rgb(206, 135, 135);" >
+        <h1>Análise de performance de Alunos - Pesquisa</h1>
+        <p>Entre com o intervalo de notas</p>
+        <input type="Number" id="inp_de" placeholder="De">
+        <input type="Number" id="inp_ate" placeholder="Até">
+        <br><br>
+        <button onclick="search()" style="color: rgb(206, 104, 104); background:none; border: 2px solid rgb(216, 115, 115)">Pesquisar</button>
+        <span id="span_msg2"></span>
+
+    </div>
+</body>
+</html>
+
+<script>
+
+    // Criando as Arrays necessárias 
+    var array_nome = [];
+    var array_nota = [];
+
+    function reg(){
+
+        // Criando as variáveis necessárias 
+
+        var nomeVar = inp_nome.value;
+        var notaVar = inp_nota.value;
+
+        // Validações 
+
+        if(nomeVar == '' || notaVar == ''){
+
+            span_msg.innerHTML = 'Todos os campos devem ser preenchidos';
+
+        }else if (notaVar < 0 || notaVar > 10){
+            span_msg.innerHTML = 'Nota deve estar entre 0 e 10';
+
+        }else {
+
+            span_msg.innerHTML = '';
+
+            inp_nome.value = '';
+            inp_nota.value = '';
+
+            array_nome.push(nomeVar);
+            array_nota.push(notaVar);
+
+
+            console.log(array_nome);
+            console.log(array_nota);
+
+            // Limpando o Array
+
+            for(i = 0; i < array_nota.length; i++){
+                                                // Pega sempre a última posição.  Pois pega o length e diminui por 1 no primeiro depois por 2 e assim por diante
+                span_msg.innerHTML += `<br>Aluno: ${array_nome[array_nome.length - (i + 1)]}, nota: ${array_nota[array_nota.length - (i + 1)]} <br>`
+            }
+        }
+    }
+    
+    function ana (){
+
+        if(array_nota.length <= 0){
+
+            alert('Você não tem nada pra analisar ')
+
+        }else {
+
+            form.style.display = 'none';
+            div2.style.display = 'block';
+        }
+    }
+
+    function search(){
+
+        // Criação das Variáveis 
+
+        var deVar = Number(inp_de.value);
+        var ateVar = Number(inp_ate.value);
+
+        span_msg2.innerHTML = '';
+
+
+        // validacao 
+
+        if(deVar < 0 || deVar > 10 || ateVar < 0 || ateVar > 10){
+
+            span_msg2.innerHTML = 'Números precisam estar entre 0 e 10';
+
+        }else if (deVar >= ateVar){
+
+            span_msg2.innerHTML = 'Números precisam estar em ordem crescente';
+
+        }else{
+            // Criação das Variáveis necessárias 
+            
+            // Total de alunos registrados = count
+            var count = 0;
+            menor = 999;
+            maior = -999;
+            var soma = 0;
+
+            console.log(soma);
+            console.log(count);
+            
+            for(i = 0; i < array_nota.length; i++){
+
+                // Meu for só será valido quando entrar nesse if stat
+                if(array_nota[i] >= deVar && array_nota[i] <= ateVar){
+
+                    span_msg2.innerHTML += `<br> <br> O Aluno ${array_nome[i]} ficou com a nota de ${array_nota[i]}<br> <br>`;
+
+                    count ++;
+
+                }
+
+                if(menor < array_nota[i]){
+
+                    menor = array_nota[i];
+
+                }
+
+                if(maior > array_nota[i]){
+
+                    maior = array_nota[i];
+
+                }
+
+                soma += array_nota[i];
+
+            }
+
+            
+            
+        }
+        span_msg2 += `<br> <br> Total de alunos registrados: ${array_nome.length} <br>
+                                Total de alunos listado: ${count} <br>
+                                Maior Nota = ${maior} <br>
+                                Menor Nota = ${menor} <br>
+                                Média da Nota = ${soma / array_nota.length} <br> `
+    }
+
+    
+</script>
