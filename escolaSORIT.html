@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorit</title>
+</head>
+<body>
+    <h2>Escola SORIT</h2>
+    Entre com a idade do aluno: <input id="ipt_idade">
+    <button onclick="cadastrar()">Cadastrar</button> <br><br>
+
+    Intervalo de ocorrências para análise
+    <input id="ipt_ocor_de"> <input id="ipt_ocor_ate"> 
+    <button onclick="ocorrencias()">Analisar Ocorrências</button> <br>
+    
+    Intervalo de idades para análise
+    <input id="ipt_idade_de"> <input id="ipt_idade_ate"> 
+    <button onclick="idades()">Analisar Idades</button> <br><br>
+
+    <div id="div_msg"></div>
+    
+</body>
+</html>
+<script>
+    var vt_idades = [];
+
+    function cadastrar() {
+
+        div_msg.innerHTML = '';
+
+        var idadeVar = Number (ipt_idade.value);
+
+        if(idadeVar > 80){
+            alert('Pessoas com mais de 80 anos não podem se cadastrar')
+
+        }else if (idadeVar < 18){
+            alert('Precisa ser maior de 18 para se cadastrar')
+
+        }else {
+            
+            vt_idades.push(Number(ipt_idade.value));
+           
+            if (idadeVar >= 65){
+
+                alert(' Associação permitida, mas com restrição');
+            }
+
+            console.log(idadeVar)
+
+            for (i = 0; i < vt_idades.length; i++){
+
+                div_msg.innerHTML += `<br>${vt_idades[vt_idades.length - (i + 1)]} <br>`;
+                
+            }
+        }
+
+        ipt_idade.value = '';
+
+    }
+
+
+    function ocorrencias() {
+
+        var primNum = Number (ipt_ocor_de.value);
+        var segNum = Number(ipt_ocor_ate.value);
+
+        if(vt_idades.length < 0){
+
+            alert('Você não tem nenhuma idade cadastrada');
+
+        }else if (ipt_idade >= primNum){
+            alert('Números devem estar de forma crescente')
+        
+        }else if (primNum == '' || segNum == ''){
+
+            alert('Você precisa inserir valores nos dois campos')
+
+        }else{
+
+            // Criando as variáveis necessarias 
+
+            var soma = 0;
+            var menor = 999;
+            var maior = -999;
+            var count = 0;
+
+
+            
+            for(k = 0; k < vt_idades.length; k++ ){
+                
+                if(k >= primNum && k <= segNum){
+
+                    if(vt_idades[k] > maior){
+
+                        maior = vt_idades[k];
+                    }
+                    if(vt_idades[k] < menor){
+
+                        menor = vt_idades[k - 1]
+                    }
+                    count++;
+                    soma += vt_idades[k];
+                }
+
+            }
+
+            div_msg.innerHTML += `<br>Resumo do intervalo de ocorrências <br>
+                                    Inicial: ${vt_idades[primNum - 1]} <br>
+                                    Final: ${vt_idades[segNum - 1]} <br>
+                                    Menor Idade do intervalo: ${menor} <br>
+                                    Maior Idade do intervalo: ${maior} <br>
+                                    Qtde de idades cadastradas no intervalo: ${count} <br>
+                                    Média das idades do intervalo: ${soma / count}`;
+            
+        }
+
+    }
+    function idades() {
+    
+
+        // var dos inputs 
+        var primIdade = Number (ipt_idade_de.value);
+        var segIdade = Number(ipt_idade_ate.value);
+        
+        
+        if(primIdade == '' || segIdade == ''){
+            alert('Você não pode deixar os campos vazios')
+            
+        }else if (primIdade > segIdade){
+            
+            alert('Números devem estar de maenira decrescente')
+            
+        }else {
+
+            var soma = 0;
+            var menor = 999;
+            var maior = -999;
+            var count = 0;
+            
+            vt_idades.sort();
+            for(j = 0; j < vt_idades.length; j++){
+
+                if(Number(vt_idades[j]) >= primIdade && Number(vt_idades[j]) <= segIdade){
+
+
+                }
+            }
+
+            console.log(menor);
+            console.log(maior);
+            console.log(count)
+            console.log(soma)
+           
+
+
+        }
+    }
+        
+        
+      
+                
+
+     
+        
+    
+</script>

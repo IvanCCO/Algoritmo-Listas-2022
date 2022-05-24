@@ -11,10 +11,10 @@
 
     <select  id="combo">
 
-        <option value="0">Indique o Resultado</option>
-        <option value="1">Vitória</option>
-        <option value="2">Empate</option>
-        <option value="3">Derrota</option>
+        <option value="4">Indique o Resultado</option>
+        <option value="3">Vitória</option>
+        <option value="1">Empate</option>
+        <option value="0">Derrota</option>
 
     </select>
 
@@ -25,7 +25,11 @@
     <br><br>
 
     <span id="span_registro"></span>
+<<<<<<< HEAD
 
+=======
+    <br><br>
+>>>>>>> d274f1a386330caab046c411b7b1c366910eebe7
     <input type="Number" id="inp_num" placeholder="Jogo que quer ver" onkeyup="mostrar()">
 
     <span id="span_mostrar"></span>
@@ -38,62 +42,58 @@
 <script>
 
     // Array que guarda todos os valores, Pontos, Vitoria, empates e derrota
+<<<<<<< HEAD
     ArrayGuardar = []; 
+=======
+
+    var partida = [];
+>>>>>>> d274f1a386330caab046c411b7b1c366910eebe7
     
     function cad(){
         
+        
+        var soma = 0;
         // Variável guardando a soma das partidas 
+        
+        var vitoria = 0;
+        var derrota = 0;
+        var empate = 0;
+        
+        var resultadoVar = Number (combo.value);
 
-        var resultadoVar = combo.value;
-
-        if (resultadoVar == 0){
+        if (resultadoVar == 4){
 
             alert('Coloque um valor válido');
 
         }else{
             
             partida.push(resultadoVar);
-
-
-            if (resultadoVar == 1){
-
-                guardar[0] += 3;
-                guardar[1]++;
-
-            }else if (resultadoVar == 2){
-
-                guardar[0] += 1;
-                guardar[2] ++;
-
-
-            }else {
-
-                guardar[3]++
-            }
-
-            span_registro.innerHTML = `<br> O time teve: ${guardar[2]} vitórias, ${guardar[3]} Empates, ${guardar[4]} Derrotas`;
-            span_registro.innerHTML += `<br> Pontuação total: ${guardar[1]} pontos`;
-            span_registro.innerHTML += `<br> Aproveitamento`;
-            console.log(guardar);
-        }
-        }
-
-
-        function partida(){
-
-            var partidaVar = inp_num.value;
-
-
-            if (partidaVar > partida.length){
-
-                span_mostrar.innerHTML = `Não foi cadastrado um jogo ${partidaVar}° jogo.`
-
-            }else {
-
+            
+            
+            for(i = 0; i < partida.length; i++){
                 
-                span_mostrar.innerHTML = `No ${partidaVar}° jogo, o time `;
+                if (partida[i] == 3){
+                    vitoria++
+                }else if (partida[i] == 1){
+                    empate++
+                }else{
+                    derrota++;
+                }
+
+                soma+= partida[i];
             }
+
+            console.log(partida);
+            console.log(soma);
+            span_registro.innerHTML = `<br> O time teve: ${vitoria} vitórias, ${empate} Empates, ${derrota} Derrotas`;
+            span_registro.innerHTML += `<br> Pontuação total: ${soma} pontos`;
+            span_registro.innerHTML += `<br> Aproveitamento`;
+           
         }
+        }
+
+
+     
 
 </script>
 
