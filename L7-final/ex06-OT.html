@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Temperatura</h1>
+
+    <h3>Temperatura ambiente</h3>
+    <input type="Number" id="inp_temp" placeholder="Informe a temperatura">
+    <br><br>
+
+    <button onclick="calc()">Verificar clima</button> <br><br>
+
+    <img style='width: 500px; height: 300px;' id='imagem_fruta' src="" alt="">
+
+    <br><br><a href="index.html">Home</a>
+
+</body>
+
+</html>
+
+<script>
+    function calc(){
+        var temp = Number(inp_temp.value);
+
+        temp<10? imagem_fruta.src = 'imagens/fresh-fruits-royalty-free-image-538390847-1540315357.jpg':imagem_fruta.src = 'imagens/allimentos-estragados.jpg';
+       
+    }
+</script>
+
+

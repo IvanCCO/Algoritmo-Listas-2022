@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <H1>Banco Itado</H1>
+
+    <h2>Cheque especial</h2>
+
+    <h4>Coloque o saldo da conta</h4>
+    <input type="text" id="inp_saldo" autofocus placeholder="Saldo em conta">
+    <br>
+
+    <h4>Valor do Débito</h4>
+    <input type="text" id="inp_valor" placeholder="Total a tirar">
+    <br>
+
+    <br>
+    <button onclick="analisar()">Analisar conta</button>
+    <br><br>
+
+    <div style='font-size: 30; color: red;' id="div_negativo"></div>
+    <br>
+    <br>
+    <div style='font-size: 30; color: blue; font-style: italic;' id="div_positivo"></div>
+
+    <br><br><a href="index.html">Home</a>
+
+</body>
+
+
+</html>
+
+<script>
+
+    function analisar(){
+
+        var saldo = Number(inp_saldo.value);
+        var valor = Number(inp_valor.value);
+        var total = saldo - valor;
+
+
+        total<0?div_negativo.innerHTML = `O saldo de sua conta corrente é ${total} Reais`:div_positivo.innerHTML = `O saldo de sua conta corrente é ${total} Reais`;
+
+    }
+</script>

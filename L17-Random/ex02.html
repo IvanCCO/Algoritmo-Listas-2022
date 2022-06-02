@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ponto toFixed</h1>
+
+
+    <p>Pressione</p> <br><br>
+    <button onclick="calc()">Sortear</button> <br><br>
+
+    <img id="imagem" src="" height="150px" width="150px">
+
+    
+</body>
+</html>
+
+<script>
+
+    function calc(){
+
+        aleatorio = (Math.random() * 4).toFixed(0);
+
+        console.log(aleatorio);
+
+
+        if(aleatorio == 0){
+
+            imagem.src = `coringa.webp`
+
+        }else if (aleatorio == 1){
+
+            img.src = `https://imgs.search.brave.com/Zjvorii4BxJmy-8tOz-4ay_EphS2k0lbEOIaXLPPcBE/rs:fit:1200:688:1/g:ce/aHR0cHM6Ly9mYWJp/YW5hc2NhcmFuemku/Y29tLmJyL3dwLWNv/bnRlbnQvdXBsb2Fk/cy8yMDE3LzAxL3Nw/LmpwZw`;
+
+        }else if(aleatorio == 2){
+
+            img.src = `https://imgs.search.brave.com/lTproIRdwYK56C1h1Jh9yOPVwo35_N8QM02Sj3AKR9I/rs:fit:1200:630:1/g:ce/aHR0cHM6Ly8xLmJw/LmJsb2dzcG90LmNv/bS8tYUFidHplRndN/UXcvWGdRNjFiMFZQ/aUkvQUFBQUFBQUFp/dmsvbkV0X2Rqb041/Z2NjUmFKeWgtYTFl/NWNLQVJtblRjdExn/Q0xjQkdBc1lIUS93/MTIwMC1oNjMwLXAt/ay1uby1udS85NzIy/MjUuanBn`;
+
+        }else {
+
+            img.src = `https://imgs.search.brave.com/1qAMnbU6RmcPYvGq06yf1z7ZkVbRYGVD0v8VYIIgMc8/rs:fit:862:1200:1/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzJkL2Zi/LzhhLzJkZmI4YWY0/YzU0YmUyNDAwOGUw/NGM0MDY4MzZjYTI0/LmpwZw`;
+        }
+    }
+</script>

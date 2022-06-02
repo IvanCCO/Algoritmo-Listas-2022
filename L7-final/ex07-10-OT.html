@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <H1>Minha série preferida</H1>
+
+    <h4>Informe a ultima serie que você assistiu</h4>
+    <input type="text" id="nome_serie"autofocus placeholder="Ultima serie">
+
+    <br><br>
+
+    <h4>Total de Episódios</h4>
+    <input id="inp_ep" type="number" placeholder="total">
+
+    <br><br>
+
+    <button onclick="calc()">Verificar nível</button>
+
+    <br><br>
+
+    <div id="div_nome"></div>
+    <br><br>
+    <div id="div_mensagem"></div>
+
+    <br><br><a href="index.html">Home</a>
+
+</body>
+
+
+</html>
+
+<script>
+
+
+    function calc(){
+
+
+        var tempo = Number(inp_ep.value) * 22;
+
+        div_nome.innerHTML = `Vejo que você gosta da série ${nome_serie.value}`;
+
+        tempo>1800?div_mensagem.innerHTML = `UAU, você realmente gosta dessa série`:div_mensagem.innerHTML = '';
+
+    }
+
+
+    
+
+
+       
+</script>

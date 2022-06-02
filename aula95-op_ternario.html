@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aula35 Op.Cond.Ternário</title>
+    <style>
+        button { width: 100px;}
+    </style>
+</head>
+
+<body>
+    <h3>Operador Condicional Ternário</h3>
+    Entre com a média do aluno: <input id="ipt_media" placeholder="Média" autofocus>
+    <br><br><br>
+    <button onclick="basico()">Básico</button>
+    <button onclick="alerta()">Alert</button>
+    <button onclick="variavel()">Variável</button>
+    <button onclick="operador_e()">Operador E</button>
+    <button onclick="condicao()">Mais Cond.</button>
+    <button onclick="operacao()">Mais Oper.</button>
+</body>
+
+</html>
+<script>
+
+    //            OPERADOR TERNÁRIO
+    // 1ª parte (antes da "?") - É o Teste lógico
+    // 2ª parte (após a "?") - É o Resultado se o teste for true (verdadeiro)
+    // 3ª parte (após os ":") - É o Resultado se o teste for false (falso)
+
+    function basico() {
+        /* 
+        Abaixo o Operador Ternário é utilizado de uma forma muito semelhante ao IF ELSE
+        Temos a condição                            - media.value >= 6
+        Temos o comando executado quando verdadeiro - alert ("aprovado")
+        Temos o comando executado quando falso      - alert("reprovado")
+        */
+        var ax_media = Number(ipt_media.value);
+        ax_media >= 6 ? alert("aprovado") : alert("reprovado");
+        //   condição        ?      thru          :      false   
+    }
+
+
+
+    function alerta() {
+
+        // Abaixo temos o ALERT emitindo o resultado do Operador Ternário 
+        // OBS.   Na função anterior tinhamos uma ALERT para o TRUE e outro
+        //        ALERT para o FALSE. Nesta função o ALERT emite o resultado do 
+        //        Operador Ternário.
+
+        var ax_media = Number(ipt_media.value);
+        alert(ax_media >= 6 ? 'aprovado' : 'reprovado');
+    }
+
+
+
+    function variavel() {
+
+        // Abaixo temos resultado do O Operador Ternário sendo atribuído
+        // a uma variável. 
+
+        var ax_media = Number(ipt_media.value);
+        var ax_result = (ax_media >= 6 ? "aprovado" : "reprovado");
+        alert(ax_result);
+    }
+
+
+
+    function operador_e() {
+        
+        // Sim, é possível usar os operadores E (&&) / OU (||)
+        // Veja o exemplo abaixo, a saída verdadeira (TRUE) será obtida somente
+        //      quando a média for par E a partir de 6. 
+
+        var ax_media = Number(ipt_media.value);
+        var ax_resto = ax_media % 2;
+        var ax_result = (ax_media >= 6 && ax_resto == 0 ? 
+            "aprovado E média é PAR" : "OU é Reprovado OU a Média é IMPAR");
+        alert(ax_result);
+    }
+
+
+    
+    function condicao() {
+        
+        // É possível aninhar Operadores Ternários, assim como os IFs??????
+        // É possível ter múltiplas decisões????
+
+        // Sim, veja no exemplo abaixo que na saída falsa (FALSE) existe um outro
+        //      Operador Ternário, ou seja, se a média for menor que 6 sai o alerta 
+        //      "reprovado", caso contrário, SE a média for a partir de 9 o alerta é 
+        //      "superou", senão o alerta é "aprovado" 
+
+        var ax_media = Number(ipt_media.value);
+        ax_media < 6 ? alert("reprovado") :
+            ax_media >= 9 ? alert("SUPEROU!!") : alert("aprovado");
+    }
+
+
+
+    function operacao() {
+            
+        // Na saída verdadeira (TRUE) ou na saída falsa (FALSE) É POSSÍVEL ter mais 
+        // de um comando nessa saída.
+        
+        // Veja no exemplo abaixo que na verdadeira (TRUE) temos dois comandos o 
+        // o primeiro é o alerta "reprovado" e o segundo comando é o 
+        // alerta "tente novamente". Poderíamos ter quantos comando fosse necessário,
+        // mas lembre-se de deixar o seu código limpo e de fácil entendimento.
+        
+        var ax_media = Number(ipt_media.value);
+        ax_media < 6 ? (alert("reprovado"), alert("tente novamente")) : alert("aprovado");
+        // é possível ter múltiplos comandos
+    }
+</script>

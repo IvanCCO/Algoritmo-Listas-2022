@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Notas escolares</h1>
+
+    <h4>Insira sua primeira nota</h4>
+    <input type="number" id="id_nota1" autofocus placeholder="Nota 1">
+    <h4>Insira sua segunda nota</h4>
+    <input type="number" id="id_nota2" autofocus placeholder="Nota 2">
+
+    <br><br>
+
+    <button onclick="calc()">Verificar situação</button>
+    <br><br>
+
+    <div style="font-size: 20px; color: green; background-color: silver;" id="span_msgVerde"></div> <br><br>
+
+    <div style="font-size: 20px; color: red; background-color: silver;" id="span_msgVermelho"></div>
+
+    <br><br><a href="index.html">Home</a>
+</body>
+
+</html>
+
+<script>
+    function calc(){
+        var nota1 = Number(id_nota1.value);
+        var nota2 = Number(id_nota2.value);
+        var media = (nota1 + nota2) / 2;
+
+
+            media>=6?span_msgVerde.innerHTML = `Parabéns, aprovado!`:span_msgVermelho.innerHTML = `Tente outra vez`;
+
+           
+    }
+</script>
