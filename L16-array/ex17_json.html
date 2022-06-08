@@ -36,11 +36,8 @@
 <script>
 
     // Criando as Arrays necessárias 
-    var array_nome = [];
-    var array_nota = [];
+    var array_info = [];
 
-
-    isCheck = true;
 
     function reg(){
 
@@ -66,26 +63,23 @@
 
             inp_nome.value = '';
             inp_nota.value = '';
+            
+            array_info.push({nome: nomeVar, nota:notaVar})
+         
+            console.log(array_info);
+            console.log(array_info[0].nome)
 
-            array_nome.push(nomeVar);
-            array_nota.push(notaVar);
-
-
-            console.log(array_nome);
-            console.log(array_nota);
-
-            // Limpando o Array
-
-            for(i = 0; i < array_nota.length; i++){
+            for(i = 0; i < array_info.length; i++){
                                                 // Pega sempre a última posição.  Pois pega o length e diminui por 1 no primeiro depois por 2 e assim por diante
-                span_msg.innerHTML += `<br>Aluno: ${array_nome[array_nome.length - (i + 1)]}, nota: ${array_nota[array_nota.length - (i + 1)]} <br>`
+                span_msg.innerHTML += `<br>Aluno: ${array_info[i].nome}, nota: ${array_info[array_info.length - (i + 1)].nota} <br>`
             }
+            
         }
     }
     
     function ana (){
 
-        if(array_nota.length <= 0){
+        if(array_info.length <= 0){
 
             alert('Você não tem nada pra analisar ')
 
@@ -128,33 +122,33 @@
             console.log(soma);
             console.log(count);
             
-            for(i = 0; i < array_nota.length; i++){
+            for(i = 0; i < array_info.length; i++){
 
-                console.log(typeof array_nota[i]);
+                console.log(typeof array_info[i]);
 
                 
                 // Meu for só será valido quando entrar nesse if stat
-                if(array_nota[i] >= deVar && array_nota[i] <= ateVar){
+                if(array_info[i].nota >= deVar && array_info[i].nota <= ateVar){
 
-                    span_msg2.innerHTML += `<br> <br> O Aluno ${array_nome[i]} ficou com a nota de ${array_nota[i]}<br> <br>`;
+                    span_msg2.innerHTML += `<br> <br> O Aluno ${array_nome[i].nome} ficou com a nota de ${array_info[i].nota}<br> <br>`;
 
                     count ++;
 
                 }
 
-                if(menor > array_nota[i]){
+                if(menor > array_info[i].nota){
 
-                    menor = array_nota[i];
+                    menor = array_info[i].nota;
 
                 }
 
-                if(maior < array_nota[i]){
+                if(maior < array_info[i].nota){
 
-                    maior = array_nota[i];
+                    maior = array_info[i].nota;
                     
                 }
 
-                soma += array_nota[i];
+                soma += array_info[i].nota;
               
             }
 
@@ -163,7 +157,7 @@
                                     Total de alunos listado: ${count} <br>
                                     Maior Nota = ${maior} <br>
                                     Menor Nota = ${menor} <br>
-                                    Média da Nota = ${soma / array_nota.length} <br> `;
+                                    Média da Nota = ${soma / array_info.length} <br> `;
         }
             
     }
