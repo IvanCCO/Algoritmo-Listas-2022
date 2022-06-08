@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Passou ou não</h1>
+
+    <p>Ver situação</p>
+    <button onclick="calc('analisar')">Aprovado</button>
+    <h3>Gerar</h3>
+    <br>
+    <button onclick="calc('nota')">Nota</button>
+    <br>
+    <span id="msgNota"></span>
+    <br><br>
+    <button onclick="calc('frequencia')">Frequencia</button>
+    <br>
+    <span id="msgFrequencia"></span>
+    <br><br>
+
+</body>
+</html>
+
+
+<script>
+
+
+    function calc(exame){
+        
+
+
+        var zeroAcem = Number((Math.random() * 100).toFixed(2));
+        console.log( 'O tipo do zeroAcem é '+ typeof zeroAcem)
+        var zeroAdez = Number((Math.random() * 10).toFixed(2));
+        console.log('O tipo do zeroAdez é ' + typeof zeroAdez);
+
+        if(exame == 'nota'){
+
+            msgNota.innerHTML = `A nota foi de ${zeroAdez}`;
+
+        }else if (exame == 'frequencia'){
+
+            msgFrequencia.innerHTML = `A frequência foi de ${zeroAcem}%`;
+
+           
+
+        }else {
+                if(zeroAcem >= 75 && zeroAdez >= 6){
+
+                    alert('Tudo certo aluno aprovado');
+
+                }else {
+
+                   alert('Aluno reprovado')
+                }
+        }
+    }
+</script>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Começando a fazer o fatorial</h1>
+
+    <p>Será que dá certo?</p>
+    <input type="Number" id="inp_num" placeholder="Número que será fatoriadoooo" >
+    <br>
+    <button onclick="calc()">Fatoriando</button>    
+    <br><br>
+    <span id="span_msg"></span>
+
+
+</body>
+</html>
+
+<script>
+
+
+    function calc(){
+
+        var numeroVar = inp_num.value;
+        var soma = numeroVar;
+
+        if(numeroVar != ''){
+
+            for (i = 1; i < numeroVar; i++) {
+
+                soma *= i;
+            }
+            span_msg.innerHTML = `O número em fatorial é ${soma}`;
+            
+        }
+    }
+</script>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Jogar de Ladinho</h1>
+
+    <p>Jogador 1</p>
+    <button onclick="calc('jogador1')">Sortear</button>
+    <br>
+    <span id="num1"></span>
+    <br>
+    <p>Jogador 2</p>
+    <button onclick="calc('jogador2')">Sortear</button>
+    <br>
+    <span id="num2"></span>
+    <br>
+    <span id="Resultado"></span>
+
+</body>
+</html>
+
+
+<script>
+    
+    isCheck = true;
+    function calc(analisar){
+
+        var dado1 = Number((Math.random() * 5).toFixed(0)) + 1;
+        var dado2 = Number((Math.random() * 5).toFixed(0)) + 1;
+
+
+        console.log(`O valor do dado 1 é ${dado1} e seu tipo é ${typeof dado1}` + `O valor do dado 2 é ${dado2} e seu tipo é ${typeof dado2}`);
+
+        if(analisar == 'jogador1'){
+
+            num1.innerHTML = `Jogador 1 tirou ${dado1}`;
+
+            isCheck = false;
+
+        }else if (analisar == 'jogador2'){
+
+            console.log(isCheck);
+
+            if(isCheck == true){
+
+                alert('Jogador 1 joga primeiro');
+
+            }else{
+
+                num2.innerHTML = `Jogador 2 tirou ${dado2}<br>`;
+
+
+                if(dado1 > dado2){
+
+                    num2.innerHTML += `Jogador 1 venceu`;
+
+                }else {
+
+                    num2.innerHTML += `Jogador 2 venceu`;
+
+                }
+
+
+            }
+
+        }
+
+    }
+</script>

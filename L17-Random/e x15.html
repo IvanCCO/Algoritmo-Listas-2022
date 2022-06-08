@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Minha temperatura</h1>
+
+    <p>Sortei uma temperatura</p>
+    <button onclick="calc()">Sortear</button>
+    <br><br>
+    <span id="msg"></span>
+</body>
+</html>
+
+
+<script>
+
+    function calc(){
+
+        var aleatorio = Number((Math.random() * 40).toFixed(0)) - 20; 
+
+        console.log( 'O valor de aleatorio é ' + aleatorio + 'e o tipo é' + typeof aleatorio );
+
+        msg.innerHTML = `A temperatura é de ${aleatorio} graus <br> `;
+
+        if(aleatorio < 1){
+
+            msg.innerHTML += `Dá pra conservar qualquer alimento`;
+
+        }else if (aleatorio < 10){
+
+            msg.innerHTML += `Conserva a maioria dos alimentos`;
+
+        }else {
+
+            msg.innerHTML += `Estraga a maioria dos alímentos`; 
+        }
+    }
+</script>

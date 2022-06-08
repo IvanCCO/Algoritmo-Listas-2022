@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Sortear momento do Dia</h1>
+    
+    <button onclick="calc()">Sortear</button>
+    <br><br>
+    <span id="msg"></span>
+</body>
+</html>
+
+<script>
+
+    function calc(){
+
+        var aleatorio = (Math.random() * 23).toFixed(0);
+
+        console.log(aleatorio);
+
+        if(aleatorio <= 11){
+
+            msg.innerHTML = `Bom dia flor do Dia são ${aleatorio} horas`;
+
+        }else if (aleatorio <= 17){
+
+            msg.innerHTML = `Boa Tarde, já vai tarde são ${aleatorio} Horas`;
+
+        }else {
+
+            msg.innerHTML = `Boa noite, Durma bem já são ${aleatorio} Horas`;
+        }
+    }
+</script>

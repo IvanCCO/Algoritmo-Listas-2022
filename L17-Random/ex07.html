@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Números Cabalisticos</h1>
+
+    <p>Sortei um número</p>
+
+    <button onclick="calc()">Sortear</button>
+
+    <br><br>
+
+    <span id="msg"></span>
+
+
+</body>
+</html>
+
+<script>
+
+    function calc(){
+
+        var aleatorio = Number((Math.random() * 14).toFixed(0)) + 1;
+
+        console.log(aleatorio);
+
+        msg.innerHTML = `${aleatorio} <br>`;
+
+        // 3 4 7 10 12
+        if(aleatorio == 3 || aleatorio == 4 || aleatorio == 7 || aleatorio == 10 || aleatorio == 12){
+
+            msg.innerHTML += `<br>Eu amo Números Cabalísticos`;
+
+        }else{
+
+            msg.innerHTML += `Ah, me dá um número bom na proxima`;
+
+        }
+
+     }
+</script>

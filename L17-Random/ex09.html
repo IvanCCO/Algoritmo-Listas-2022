@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Passou ou não</h1>
+
+    <p>Ver situação</p>
+    <button onclick="calc('analisar')">Aprovado</button>
+    <h3>Gerar</h3>
+    <br>
+    <button onclick="calc('nota')">Nota</button>
+    <br>
+    <span id="msgNota"></span>
+    <br><br>
+    <button onclick="calc('frequencia')">Frequencia</button>
+    <br>
+    <span id="msgFrequencia"></span>
+    <br><br>
+
+</body>
+</html>
+
+
+<script>
+
+
+    var nota = 0;
+    var frequencia = 0;
+
+    function calc(exame){
+              
+        if(exame == 'nota'){
+            
+            var tresAdez = Number((Math.random() * 7).toFixed(1)) + 3;
+            msgNota.innerHTML = `A nota foi de ${tresAdez}`;
+
+             nota = 0;
+
+             nota += tresAdez;
+
+        }else if (exame == 'frequencia'){
+            
+            
+            var cinquentaAcem = Number((Math.random() * 50).toFixed(1)) + 50;
+            msgFrequencia.innerHTML = `A frequência foi de ${cinquentaAcem}%`;
+
+
+            frequencia = 0;
+
+            frequencia += cinquentaAcem;
+            
+
+        }else if (exame == 'analisar'){
+
+    
+                if(frequencia >= 75 && nota >= 6){
+
+                    alert('Tudo certo aluno aprovado');
+
+                }else {
+
+                   alert('Aluno reprovado')
+                }
+        }
+    }
+</script>
