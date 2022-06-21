@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Turf Amigo Parte 2</title>
+  </head>
+  <body>
+    <h1>Turf Amigo</h1>
+
+    <div class="container">
+      <div class="arruma">
+        <input
+          type="text"
+          class="ipt"
+          id="ipt_nome"
+          placeholder="Insira aqui os nomes dos cavalos"
+        />
+        <br />
+
+        <button onclick="cad('nome')" class="btn">Cadastrar</button><br />
+        <br />
+        <input
+          type="text"
+          class="ipt"
+          id="ipt_volta"
+          placeholder="Insira aqui a quantidade de voltas "
+        />
+        <br />
+        <br />
+        <button onclick="cad('volta')" id="btn" class="btn">Volta</button>
+        <br />
+        <button class="btn" oonclick="funcaoCavalo()">Inciar corrida</button>
+      </div>
+    </div>
+    <div id="msg" class="div_voltas"></div>
+    <div id="div_podio" class="div_podio">
+      <img src="podiocavalo.png" alt="" class="podio" />
+      <div class="nomes">
+        <span id="nome1">Vitor</span><span id="nome2">Maria</span
+        ><span id="nome3">Adja</span>
+      </div>
+    </div>
+
+    <footer>
+      <br />
+      Truf Amigo <br />
+      Grupo 14
+    </footer>
+  </body>
+</html>
+
+<script>
+  // Criando os arrays
+
+  var nomeCavalo = [];
+
+  var jsonVolta = [];
+
+  var isCheckVolta = true;
+
+  function cad(info) {
+      var qntVoltas = Number(ipt_volta.value);
+    if (info == "nome") {
+      var nomeCavaloVar = ipt_nome.value;
+
+       
+   
+          if (nomeCavalo.length >= 7) {
+            alert("Você só pode cadastrar até 7 cavalos");
+          }else if (ipt_nome.value == ''){
+
+
+            alert('Você precisa de um nome para o cavalo')
+          }
+          
+          
+          else {
+
+            nomeCavalo.push(nomeCavaloVar);
+
+            ipt_nome.value = "";
+          }
+        
+      
+    }else{
+
+        
+        if(qntVoltas > 6){
+
+            alert('Você não pode ter mais de 7 voltas')
+
+        }else if(ipt_volta.value < 0){
+
+            alert('Precisa de no minimo 1 volta')
+        }else{
+
+            return funcaoCavalo;
+        }
+
+
+    }
+  }
+
+  function funcaoCavalo() {
+    msg.innerHTML = "";
+    var volta = Number(ipt_volta.value);
+
+    for (k = 0; k < nomeCavalo.length; k++) {
+      jsonVolta.push({ nome: nomeCavalo[k], somaTempo: 0 });
+    }
+
+    for (i = 0; i < volta; i++) {
+      msg.innerHTML += "<h1> Volta" + (i + 1) + "</h1>";
+
+      for (j = 0; j < jsonVolta.length; j++) {
+        let aleatorio = Number((Math.random() * 7).toFixed(1)) + 2;
+
+        jsonVolta[j].somaTempo += aleatorio;
+
+        msg.innerHTML +=
+          "<br>O nome do cavalo é " +
+          nomeCavalo[j] +
+          "seu tempo na volta: " +
+          aleatorio +
+          "e o tempo total: " +
+          jsonVolta[j].somaTempo.toFixed(1) +
+          `<br>`;
+      }
+    }
+  }
+</script>
